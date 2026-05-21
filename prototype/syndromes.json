@@ -1,21 +1,81 @@
 {
   "cEDS": {
     "name": "Classical Ehlers-Danlos Syndrome",
-    "genes": ["COL5A1", "COL5A2"],
+    "genes": [
+      "COL5A1",
+      "COL5A2"
+    ],
+
+    "inheritance": "Autosomal Dominant",
+
     "phenotypes": [
       "skin hyperextensibility",
       "atrophic scarring",
-      "joint hypermobility"
+      "joint hypermobility",
+      "easy bruising",
+      "soft skin",
+      "skin fragility",
+      "chronic pain",
+      "joint instability"
     ]
   },
 
   "vEDS": {
     "name": "Vascular Ehlers-Danlos Syndrome",
-    "genes": ["COL3A1"],
+
+    "genes": [
+      "COL3A1"
+    ],
+
+    "inheritance": "Autosomal Dominant",
+
     "phenotypes": [
       "aneurysms",
       "vascular fragility",
-      "translucent skin"
+      "translucent skin",
+      "arterial rupture",
+      "easy bruising",
+      "thin skin",
+      "organ rupture",
+      "characteristic facial appearance"
+    ]
+  },
+
+  "kEDS": {
+    "name": "Kyphoscoliotic Ehlers-Danlos Syndrome",
+
+    "genes": [
+      "PLOD1",
+      "FKBP14"
+    ],
+
+    "inheritance": "Autosomal Recessive",
+
+    "phenotypes": [
+      "kyphoscoliosis",
+      "muscle hypotonia",
+      "joint hypermobility",
+      "scoliosis",
+      "fragile sclera",
+      "motor delay"
+    ]
+  },
+
+  "clEDS": {
+    "name": "Classical-like Ehlers-Danlos Syndrome",
+
+    "genes": [
+      "TNXB"
+    ],
+
+    "inheritance": "Autosomal Recessive",
+
+    "phenotypes": [
+      "skin hyperextensibility",
+      "joint hypermobility",
+      "easy bruising",
+      "soft skin",
+      "chronic pain"
     ]
   }
 }

@@ -5,30 +5,41 @@ def calculate_score(patient_data, syndrome_data):
     # Variant scoring
     for variant in patient_data["variants"]:
 
-        gene = variant["gene"]
+        patient_gene = variant["gene"]
         classification = variant["classification"]
 
-        if gene in syndrome_data["genes"]:
+        for syndrome_gene in syndrome_data["genes"]:
 
-            if classification == "Pathogenic":
-                score += 60
+            if patient_gene == syndrome_gene["name"]:
 
-            elif classification == "Likely Pathogenic":
-                score += 40
+                gene_weight = syndrome_gene["weight"]
 
-            elif classification == "VUS":
-                score += 15
+                if classification == "Pathogenic":
+                    score += gene_weight
+
+                elif classification == "Likely Pathogenic":
+                    score += gene_weight * 0.7
+
+                elif classification == "VUS":
+                    score += gene_weight * 0.25
 
     # Phenotype scoring
-    for phenotype in patient_data["phenotypes"]:
+    for patient_pheno in patient_data["phenotypes"]:
 
-    phenotype_name = phenotype["name"]
+        patient_pheno_name = patient_pheno["name"]
 
-    if phenotype_name in syndrome_data["phenotypes"]:
-            score += 10
+        for syndrome_pheno in syndrome_data["phenotypes"]:
+
+            if patient_pheno_name == syndrome_pheno["name"]:
+
+                score += syndrome_pheno["weight"]
+
+                # Bonus for cardinal features
+                if syndrome_pheno["cardinal"]:
+                    score += 5
 
     # Inheritance scoring
     if patient_data["inheritance"] == syndrome_data["inheritance"]:
         score += 15
 
-    return score
+    return round(score, 2)

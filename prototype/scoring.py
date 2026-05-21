@@ -22,7 +22,9 @@ def calculate_score(patient_data, syndrome_data):
     # Phenotype scoring
     for phenotype in patient_data["phenotypes"]:
 
-        if phenotype in syndrome_data["phenotypes"]:
+    phenotype_name = phenotype["name"]
+
+    if phenotype_name in syndrome_data["phenotypes"]:
             score += 10
 
     # Inheritance scoring

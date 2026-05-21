@@ -1,32 +1,36 @@
 import json
+from scoring import calculate_score
 
 # Load syndrome database
 with open("syndromes.json", "r") as file:
     syndromes = json.load(file)
 
-# Example patient data
-patient_genes = ["COL5A1"]
-patient_phenotypes = [
-    "skin hyperextensibility",
-    "joint hypermobility"
-]
+# Example patient
+patient_data = {
+
+    "genes": [
+        "COL5A1"
+    ],
+
+    "phenotypes": [
+        "skin hyperextensibility",
+        "joint hypermobility",
+        "easy bruising",
+        "chronic pain"
+    ],
+
+    "inheritance": "Autosomal Dominant"
+}
 
 results = {}
 
-# Scoring system
+# Analyze syndromes
 for syndrome_id, syndrome_data in syndromes.items():
 
-    score = 0
-
-    # Gene scoring
-    for gene in patient_genes:
-        if gene in syndrome_data["genes"]:
-            score += 50
-
-    # Phenotype scoring
-    for phenotype in patient_phenotypes:
-        if phenotype in syndrome_data["phenotypes"]:
-            score += 10
+    score = calculate_score(
+        patient_data,
+        syndrome_data
+    )
 
     results[syndrome_data["name"]] = score
 
@@ -38,7 +42,7 @@ sorted_results = sorted(
 )
 
 # Print ranking
-print("\nDiagnostic Ranking:\n")
+print("\n=== Diagnostic Ranking ===\n")
 
 for diagnosis, score in sorted_results:
     print(f"{diagnosis}: {score}")

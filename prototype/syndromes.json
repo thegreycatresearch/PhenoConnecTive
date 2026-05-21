@@ -1,1 +1,21 @@
+{
+  "cEDS": {
+    "name": "Classical Ehlers-Danlos Syndrome",
+    "genes": ["COL5A1", "COL5A2"],
+    "phenotypes": [
+      "skin hyperextensibility",
+      "atrophic scarring",
+      "joint hypermobility"
+    ]
+  },
 
+  "vEDS": {
+    "name": "Vascular Ehlers-Danlos Syndrome",
+    "genes": ["COL3A1"],
+    "phenotypes": [
+      "aneurysms",
+      "vascular fragility",
+      "translucent skin"
+    ]
+  }
+}

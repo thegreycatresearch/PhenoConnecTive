@@ -1,9 +1,60 @@
-{
-  "cEDS": {
-    "name": "Classical Ehlers-Danlos Syndrome",
-    "genes": [
-      "COL5A1",
-      "COL5A2"
+"cEDS": {
+
+  "name": "Classical Ehlers-Danlos Syndrome",
+
+  "genes": [
+    {
+      "name": "COL5A1",
+      "weight": 60
+    },
+
+    {
+      "name": "COL5A2",
+      "weight": 55
+    }
+  ],
+
+  "inheritance": "Autosomal Dominant",
+
+  "phenotypes": [
+
+    {
+      "name": "skin hyperextensibility",
+      "weight": 20,
+      "cardinal": true
+    },
+
+    {
+      "name": "atrophic scarring",
+      "weight": 25,
+      "cardinal": true
+    },
+
+    {
+      "name": "joint hypermobility",
+      "weight": 15,
+      "cardinal": true
+    },
+
+    {
+      "name": "easy bruising",
+      "weight": 8,
+      "cardinal": false
+    },
+
+    {
+      "name": "soft skin",
+      "weight": 7,
+      "cardinal": false
+    },
+
+    {
+      "name": "chronic pain",
+      "weight": 5,
+      "cardinal": false
+    }
+  ]
+}
     ],
 
     "inheritance": "Autosomal Dominant",

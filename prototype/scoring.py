@@ -2,13 +2,26 @@ def calculate_score(patient_data, syndrome_data):
 
     score = 0
 
-    # Gene scoring
-    for gene in patient_data["genes"]:
+    # Variant scoring
+    for variant in patient_data["variants"]:
+
+        gene = variant["gene"]
+        classification = variant["classification"]
+
         if gene in syndrome_data["genes"]:
-            score += 50
+
+            if classification == "Pathogenic":
+                score += 60
+
+            elif classification == "Likely Pathogenic":
+                score += 40
+
+            elif classification == "VUS":
+                score += 15
 
     # Phenotype scoring
     for phenotype in patient_data["phenotypes"]:
+
         if phenotype in syndrome_data["phenotypes"]:
             score += 10
 

@@ -8,13 +8,22 @@ with open("syndromes.json", "r") as file:
 # Example patient
 patient_data = {
 
-    "variants": [
+"variants": [
 
-        {
-            "gene": "COL5A1",
-            "variant": "c.1502G>A",
-            "classification": "Pathogenic"
-        }
+    {
+        "gene": "COL5A1",
+        "variant": "c.1502G>A",
+        "classification": "Pathogenic"
+    },
+
+    {
+        "gene": "TNXB",
+        "variant": "c.3001A>T",
+        "classification": "VUS"
+    }
+
+],
+           
 
     ],
 

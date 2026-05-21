@@ -27,9 +27,19 @@ patient_data = {
 
     ],
 
-    "phenotypes": [
-        "skin hyperextensibility",
-        "joint hypermobility",
+"phenotypes": [
+
+    {
+        "name": "skin hyperextensibility",
+        "hpo": "HP:0000974"
+    },
+
+    {
+        "name": "joint hypermobility",
+        "hpo": "HP:0001382"
+    }
+
+],
         "easy bruising",
         "chronic pain"
     ],

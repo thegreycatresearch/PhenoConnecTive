@@ -72,13 +72,16 @@ print("\n=== Diagnostic Ranking ===\n")
 
 for diagnosis, score in sorted_results:
 
-    print(f"{diagnosis}")
-    print(f"Score: {score}")
+    compatibility = round((score / max_score) * 100, 1)
 
-    if score >= 80:
+    print(f"{diagnosis}")
+    print(f"Raw Score: {score}")
+    print(f"Compatibility: {compatibility}%")
+
+    if compatibility >= 80:
         print("High diagnostic compatibility")
 
-    elif score >= 40:
+    elif compatibility >= 50:
         print("Moderate diagnostic compatibility")
 
     else:

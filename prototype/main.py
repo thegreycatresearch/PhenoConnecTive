@@ -67,6 +67,7 @@ sorted_results = sorted(
 )
 
 # Print ranking
+max_score = max(results.values())
 print("\n=== Diagnostic Ranking ===\n")
 
 for diagnosis, score in sorted_results:

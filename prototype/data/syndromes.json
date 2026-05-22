@@ -1,51 +1,55 @@
 {
-  "red_flags": [
-    "aneurysms",
-    "arterial rupture"
-  ],
-
   "cEDS": {
     "name": "Classical Ehlers-Danlos Syndrome",
+    "abbreviation": "cEDS",
+    "inheritance": "Autosomal Dominant",
+
     "genes": [
       {
         "name": "COL5A1",
-        "weight": 60
+        "weight": 20
       },
       {
         "name": "COL5A2",
-        "weight": 55
+        "weight": 20
       }
     ],
-    "inheritance": "Autosomal Dominant",
+
     "phenotypes": [
       {
         "name": "skin hyperextensibility",
-        "weight": 20,
+        "hpo": "HP:0000974",
+        "weight": 10,
         "cardinal": true
       },
       {
         "name": "atrophic scarring",
-        "weight": 25,
+        "hpo": "HP:0001065",
+        "weight": 10,
         "cardinal": true
       },
       {
         "name": "joint hypermobility",
-        "weight": 15,
+        "hpo": "HP:0001382",
+        "weight": 8,
         "cardinal": true
       },
       {
         "name": "easy bruising",
-        "weight": 8,
+        "hpo": "HP:0000978",
+        "weight": 6,
         "cardinal": false
       },
       {
         "name": "soft skin",
-        "weight": 7,
+        "hpo": "HP:0011359",
+        "weight": 5,
         "cardinal": false
       },
       {
-        "name": "chronic pain",
-        "weight": 5,
+        "name": "molluscoid pseudotumors",
+        "hpo": "HP:0100699",
+        "weight": 4,
         "cardinal": false
       }
     ]
@@ -53,51 +57,394 @@
 
   "vEDS": {
     "name": "Vascular Ehlers-Danlos Syndrome",
-    "genes": [
-      "COL3A1"
-    ],
+    "abbreviation": "vEDS",
     "inheritance": "Autosomal Dominant",
+
+    "genes": [
+      {
+        "name": "COL3A1",
+        "weight": 25
+      }
+    ],
+
     "phenotypes": [
-      "aneurysms",
-      "vascular fragility",
-      "translucent skin",
-      "arterial rupture",
-      "easy bruising",
-      "thin skin",
-      "organ rupture",
-      "characteristic facial appearance"
+      {
+        "name": "arterial rupture",
+        "hpo": "HP:0005294",
+        "weight": 15,
+        "cardinal": true
+      },
+      {
+        "name": "vascular fragility",
+        "hpo": "HP:0005295",
+        "weight": 12,
+        "cardinal": true
+      },
+      {
+        "name": "thin translucent skin",
+        "hpo": "HP:0000963",
+        "weight": 10,
+        "cardinal": true
+      },
+      {
+        "name": "easy bruising",
+        "hpo": "HP:0000978",
+        "weight": 8,
+        "cardinal": false
+      },
+      {
+        "name": "spontaneous organ rupture",
+        "hpo": "HP:0004299",
+        "weight": 12,
+        "cardinal": true
+      },
+      {
+        "name": "characteristic facial appearance",
+        "hpo": "HP:0001999",
+        "weight": 4,
+        "cardinal": false
+      }
+    ]
+  },
+
+  "hEDS": {
+    "name": "Hypermobile Ehlers-Danlos Syndrome",
+    "abbreviation": "hEDS",
+    "inheritance": "Unknown / Multifactorial",
+
+    "genes": [],
+
+    "phenotypes": [
+      {
+        "name": "generalized joint hypermobility",
+        "hpo": "HP:0001382",
+        "weight": 12,
+        "cardinal": true
+      },
+      {
+        "name": "chronic pain",
+        "hpo": "HP:0012531",
+        "weight": 8,
+        "cardinal": true
+      },
+      {
+        "name": "joint instability",
+        "hpo": "HP:0001388",
+        "weight": 10,
+        "cardinal": true
+      },
+      {
+        "name": "soft skin",
+        "hpo": "HP:0011359",
+        "weight": 4,
+        "cardinal": false
+      },
+      {
+        "name": "fatigue",
+        "hpo": "HP:0012378",
+        "weight": 5,
+        "cardinal": false
+      },
+      {
+        "name": "dysautonomia",
+        "hpo": "HP:0001286",
+        "weight": 7,
+        "cardinal": false
+      }
     ]
   },
 
   "kEDS": {
     "name": "Kyphoscoliotic Ehlers-Danlos Syndrome",
-    "genes": [
-      "PLOD1",
-      "FKBP14"
-    ],
+    "abbreviation": "kEDS",
     "inheritance": "Autosomal Recessive",
+
+    "genes": [
+      {
+        "name": "PLOD1",
+        "weight": 20
+      },
+      {
+        "name": "FKBP14",
+        "weight": 18
+      }
+    ],
+
     "phenotypes": [
-      "kyphoscoliosis",
-      "muscle hypotonia",
-      "joint hypermobility",
-      "scoliosis",
-      "fragile sclera",
-      "motor delay"
+      {
+        "name": "kyphoscoliosis",
+        "hpo": "HP:0002751",
+        "weight": 15,
+        "cardinal": true
+      },
+      {
+        "name": "hypotonia",
+        "hpo": "HP:0001252",
+        "weight": 10,
+        "cardinal": true
+      },
+      {
+        "name": "joint hypermobility",
+        "hpo": "HP:0001382",
+        "weight": 8,
+        "cardinal": true
+      },
+      {
+        "name": "fragile sclerae",
+        "hpo": "HP:0000591",
+        "weight": 6,
+        "cardinal": false
+      }
     ]
   },
 
   "clEDS": {
     "name": "Classical-like Ehlers-Danlos Syndrome",
-    "genes": [
-      "TNXB"
-    ],
+    "abbreviation": "clEDS",
     "inheritance": "Autosomal Recessive",
+
+    "genes": [
+      {
+        "name": "TNXB",
+        "weight": 20
+      }
+    ],
+
     "phenotypes": [
-      "skin hyperextensibility",
-      "joint hypermobility",
-      "easy bruising",
-      "soft skin",
-      "chronic pain"
+      {
+        "name": "skin hyperextensibility",
+        "hpo": "HP:0000974",
+        "weight": 10,
+        "cardinal": true
+      },
+      {
+        "name": "joint hypermobility",
+        "hpo": "HP:0001382",
+        "weight": 10,
+        "cardinal": true
+      },
+      {
+        "name": "easy bruising",
+        "hpo": "HP:0000978",
+        "weight": 7,
+        "cardinal": false
+      },
+      {
+        "name": "absence of atrophic scarring",
+        "hpo": "HP:0032443",
+        "weight": 5,
+        "cardinal": false
+      }
+    ]
+  },
+
+  "marfan": {
+    "name": "Marfan Syndrome",
+    "abbreviation": "MFS",
+    "inheritance": "Autosomal Dominant",
+
+    "genes": [
+      {
+        "name": "FBN1",
+        "weight": 25
+      }
+    ],
+
+    "phenotypes": [
+      {
+        "name": "aortic root dilatation",
+        "hpo": "HP:0002616",
+        "weight": 15,
+        "cardinal": true
+      },
+      {
+        "name": "arachnodactyly",
+        "hpo": "HP:0001166",
+        "weight": 10,
+        "cardinal": true
+      },
+      {
+        "name": "pectus excavatum",
+        "hpo": "HP:0000767",
+        "weight": 8,
+        "cardinal": false
+      },
+      {
+        "name": "scoliosis",
+        "hpo": "HP:0002650",
+        "weight": 6,
+        "cardinal": false
+      },
+      {
+        "name": "lens dislocation",
+        "hpo": "HP:0001083",
+        "weight": 14,
+        "cardinal": true
+      }
+    ]
+  },
+
+  "lds": {
+    "name": "Loeys-Dietz Syndrome",
+    "abbreviation": "LDS",
+    "inheritance": "Autosomal Dominant",
+
+    "genes": [
+      {
+        "name": "TGFBR1",
+        "weight": 22
+      },
+      {
+        "name": "TGFBR2",
+        "weight": 22
+      },
+      {
+        "name": "SMAD2",
+        "weight": 18
+      },
+      {
+        "name": "SMAD3",
+        "weight": 18
+      },
+      {
+        "name": "TGFB2",
+        "weight": 18
+      },
+      {
+        "name": "TGFB3",
+        "weight": 18
+      }
+    ],
+
+    "phenotypes": [
+      {
+        "name": "arterial aneurysm",
+        "hpo": "HP:0004942",
+        "weight": 15,
+        "cardinal": true
+      },
+      {
+        "name": "hypertelorism",
+        "hpo": "HP:0000316",
+        "weight": 8,
+        "cardinal": false
+      },
+      {
+        "name": "bifid uvula",
+        "hpo": "HP:0000193",
+        "weight": 10,
+        "cardinal": true
+      },
+      {
+        "name": "joint hypermobility",
+        "hpo": "HP:0001382",
+        "weight": 6,
+        "cardinal": false
+      },
+      {
+        "name": "tortuosity of arteries",
+        "hpo": "HP:0004970",
+        "weight": 12,
+        "cardinal": true
+      }
+    ]
+  },
+
+  "oi": {
+    "name": "Osteogenesis Imperfecta",
+    "abbreviation": "OI",
+    "inheritance": "Autosomal Dominant",
+
+    "genes": [
+      {
+        "name": "COL1A1",
+        "weight": 22
+      },
+      {
+        "name": "COL1A2",
+        "weight": 22
+      }
+    ],
+
+    "phenotypes": [
+      {
+        "name": "bone fragility",
+        "hpo": "HP:0002659",
+        "weight": 15,
+        "cardinal": true
+      },
+      {
+        "name": "recurrent fractures",
+        "hpo": "HP:0002757",
+        "weight": 15,
+        "cardinal": true
+      },
+      {
+        "name": "blue sclerae",
+        "hpo": "HP:0000592",
+        "weight": 10,
+        "cardinal": true
+      },
+      {
+        "name": "hearing loss",
+        "hpo": "HP:0000365",
+        "weight": 5,
+        "cardinal": false
+      }
+    ]
+  },
+
+  "stickler": {
+    "name": "Stickler Syndrome",
+    "abbreviation": "STL",
+    "inheritance": "Autosomal Dominant",
+
+    "genes": [
+      {
+        "name": "COL2A1",
+        "weight": 20
+      },
+      {
+        "name": "COL11A1",
+        "weight": 18
+      },
+      {
+        "name": "COL11A2",
+        "weight": 18
+      }
+    ],
+
+    "phenotypes": [
+      {
+        "name": "myopia",
+        "hpo": "HP:0000545",
+        "weight": 10,
+        "cardinal": true
+      },
+      {
+        "name": "retinal detachment",
+        "hpo": "HP:0000541",
+        "weight": 12,
+        "cardinal": true
+      },
+      {
+        "name": "hearing loss",
+        "hpo": "HP:0000365",
+        "weight": 6,
+        "cardinal": false
+      },
+      {
+        "name": "joint hypermobility",
+        "hpo": "HP:0001382",
+        "weight": 5,
+        "cardinal": false
+      },
+      {
+        "name": "midface hypoplasia",
+        "hpo": "HP:0000340",
+        "weight": 7,
+        "cardinal": false
+      }
     ]
   }
 }

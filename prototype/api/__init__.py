@@ -27,6 +27,10 @@ def create_application() -> FastAPI:
     app.include_router(variant_router, prefix="/variants", tags=["variants"])
     app.include_router(diagnosis_router, prefix="/diagnosis", tags=["diagnosis"])
 
+    @app.get("/")
+    def health_check() -> dict[str, str]:
+        return {"message": "PhenoConnecTive API is running"}
+
     return app
 
 

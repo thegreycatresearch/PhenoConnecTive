@@ -1,0 +1,453 @@
+{
+  "COL5A1": {
+    "full_name": "Collagen Type V Alpha 1 Chain",
+    "associated_conditions": [
+      "cEDS"
+    ],
+    "inheritance": "Autosomal Dominant",
+    "clinical_category": "Connective Tissue Disorder",
+    "protein_function": "Type V collagen fibril formation and extracellular matrix organization",
+    "chromosome": "9q34.3",
+    "protein": "Collagen alpha-1(V) chain",
+    "pathway": "Collagen biosynthesis",
+    "variant_relevance": "Very High",
+    "known_pathogenicity": true,
+    "acmg_priority": "High",
+    "system_involvement": [
+      "skin",
+      "joints",
+      "connective tissue"
+    ],
+    "associated_phenotypes": [
+      "skin hyperextensibility",
+      "atrophic scarring",
+      "joint hypermobility"
+    ]
+  },
+
+  "COL5A2": {
+    "full_name": "Collagen Type V Alpha 2 Chain",
+    "associated_conditions": [
+      "cEDS"
+    ],
+    "inheritance": "Autosomal Dominant",
+    "clinical_category": "Connective Tissue Disorder",
+    "protein_function": "Type V collagen assembly",
+    "chromosome": "2q32.2",
+    "protein": "Collagen alpha-2(V) chain",
+    "pathway": "Collagen fibril organization",
+    "variant_relevance": "Very High",
+    "known_pathogenicity": true,
+    "acmg_priority": "High",
+    "system_involvement": [
+      "skin",
+      "joints"
+    ],
+    "associated_phenotypes": [
+      "joint hypermobility",
+      "skin fragility"
+    ]
+  },
+
+  "COL3A1": {
+    "full_name": "Collagen Type III Alpha 1 Chain",
+    "associated_conditions": [
+      "vEDS"
+    ],
+    "inheritance": "Autosomal Dominant",
+    "clinical_category": "Vascular Connective Tissue Disorder",
+    "protein_function": "Type III collagen synthesis in vessels and organs",
+    "chromosome": "2q32.2",
+    "protein": "Collagen alpha-1(III) chain",
+    "pathway": "Extracellular matrix stability",
+    "variant_relevance": "Critical",
+    "known_pathogenicity": true,
+    "acmg_priority": "Critical",
+    "system_involvement": [
+      "vascular",
+      "gastrointestinal",
+      "skin"
+    ],
+    "associated_phenotypes": [
+      "arterial rupture",
+      "vascular fragility",
+      "thin translucent skin"
+    ]
+  },
+
+  "TNXB": {
+    "full_name": "Tenascin XB",
+    "associated_conditions": [
+      "clEDS",
+      "hEDS-like"
+    ],
+    "inheritance": "Autosomal Recessive",
+    "clinical_category": "Extracellular Matrix Disorder",
+    "protein_function": "Extracellular matrix maintenance and elasticity",
+    "chromosome": "6p21.33",
+    "protein": "Tenascin-X",
+    "pathway": "Matrix organization",
+    "variant_relevance": "High",
+    "known_pathogenicity": true,
+    "acmg_priority": "Moderate",
+    "system_involvement": [
+      "skin",
+      "musculoskeletal"
+    ],
+    "associated_phenotypes": [
+      "joint hypermobility",
+      "soft skin"
+    ]
+  },
+
+  "PLOD1": {
+    "full_name": "Procollagen-Lysine 5-Dioxygenase 1",
+    "associated_conditions": [
+      "kEDS"
+    ],
+    "inheritance": "Autosomal Recessive",
+    "clinical_category": "Collagen Modification Disorder",
+    "protein_function": "Hydroxylation of collagen lysine residues",
+    "chromosome": "1p36.22",
+    "protein": "Lysyl hydroxylase 1",
+    "pathway": "Collagen cross-linking",
+    "variant_relevance": "Very High",
+    "known_pathogenicity": true,
+    "acmg_priority": "High",
+    "system_involvement": [
+      "spine",
+      "musculoskeletal",
+      "ocular"
+    ],
+    "associated_phenotypes": [
+      "kyphoscoliosis",
+      "hypotonia",
+      "joint hypermobility"
+    ]
+  },
+
+  "FKBP14": {
+    "full_name": "FKBP Prolyl Isomerase 14",
+    "associated_conditions": [
+      "kEDS"
+    ],
+    "inheritance": "Autosomal Recessive",
+    "clinical_category": "Protein Folding Disorder",
+    "protein_function": "Protein folding and collagen maturation",
+    "chromosome": "7p14.3",
+    "protein": "FKBP14 peptidyl-prolyl cis-trans isomerase",
+    "pathway": "Protein processing",
+    "variant_relevance": "Moderate",
+    "known_pathogenicity": true,
+    "acmg_priority": "Moderate",
+    "system_involvement": [
+      "musculoskeletal",
+      "hearing"
+    ],
+    "associated_phenotypes": [
+      "hearing loss",
+      "kyphoscoliosis"
+    ]
+  },
+
+  "FBN1": {
+    "full_name": "Fibrillin 1",
+    "associated_conditions": [
+      "marfan"
+    ],
+    "inheritance": "Autosomal Dominant",
+    "clinical_category": "Aortopathy",
+    "protein_function": "Microfibril formation and connective tissue elasticity",
+    "chromosome": "15q21.1",
+    "protein": "Fibrillin-1",
+    "pathway": "TGF-beta signaling",
+    "variant_relevance": "Critical",
+    "known_pathogenicity": true,
+    "acmg_priority": "Critical",
+    "system_involvement": [
+      "cardiovascular",
+      "skeletal",
+      "ocular"
+    ],
+    "associated_phenotypes": [
+      "aortic root dilation",
+      "arachnodactyly",
+      "lens dislocation"
+    ]
+  },
+
+  "TGFBR1": {
+    "full_name": "Transforming Growth Factor Beta Receptor 1",
+    "associated_conditions": [
+      "lds"
+    ],
+    "inheritance": "Autosomal Dominant",
+    "clinical_category": "TGF-beta Pathway Disorder",
+    "protein_function": "Cell signaling receptor",
+    "chromosome": "9q22.33",
+    "protein": "TGF-beta receptor type-1",
+    "pathway": "TGF-beta signaling",
+    "variant_relevance": "Critical",
+    "known_pathogenicity": true,
+    "acmg_priority": "Critical",
+    "system_involvement": [
+      "vascular",
+      "craniofacial",
+      "skeletal"
+    ],
+    "associated_phenotypes": [
+      "arterial aneurysm",
+      "hypertelorism",
+      "bifid uvula"
+    ]
+  },
+
+  "TGFBR2": {
+    "full_name": "Transforming Growth Factor Beta Receptor 2",
+    "associated_conditions": [
+      "lds"
+    ],
+    "inheritance": "Autosomal Dominant",
+    "clinical_category": "TGF-beta Pathway Disorder",
+    "protein_function": "Signal transduction receptor",
+    "chromosome": "3p24.1",
+    "protein": "TGF-beta receptor type-2",
+    "pathway": "TGF-beta signaling",
+    "variant_relevance": "Critical",
+    "known_pathogenicity": true,
+    "acmg_priority": "Critical",
+    "system_involvement": [
+      "vascular",
+      "skeletal"
+    ],
+    "associated_phenotypes": [
+      "arterial tortuosity",
+      "aneurysm",
+      "joint hypermobility"
+    ]
+  },
+
+  "SMAD2": {
+    "full_name": "SMAD Family Member 2",
+    "associated_conditions": [
+      "lds"
+    ],
+    "inheritance": "Autosomal Dominant",
+    "clinical_category": "TGF-beta Signaling Disorder",
+    "protein_function": "Intracellular signal transduction",
+    "chromosome": "18q21.1",
+    "protein": "SMAD2",
+    "pathway": "TGF-beta signaling",
+    "variant_relevance": "High",
+    "known_pathogenicity": true,
+    "acmg_priority": "High",
+    "system_involvement": [
+      "vascular",
+      "skeletal"
+    ],
+    "associated_phenotypes": [
+      "aortic aneurysm",
+      "arachnodactyly"
+    ]
+  },
+
+  "SMAD3": {
+    "full_name": "SMAD Family Member 3",
+    "associated_conditions": [
+      "lds",
+      "aneurysm-osteoarthritis syndrome"
+    ],
+    "inheritance": "Autosomal Dominant",
+    "clinical_category": "Aortopathy",
+    "protein_function": "Signal transduction mediator",
+    "chromosome": "15q22.33",
+    "protein": "SMAD3",
+    "pathway": "TGF-beta signaling",
+    "variant_relevance": "Very High",
+    "known_pathogenicity": true,
+    "acmg_priority": "Critical",
+    "system_involvement": [
+      "vascular",
+      "joints"
+    ],
+    "associated_phenotypes": [
+      "osteoarthritis",
+      "aortic aneurysm"
+    ]
+  },
+
+  "COL1A1": {
+    "full_name": "Collagen Type I Alpha 1 Chain",
+    "associated_conditions": [
+      "oi"
+    ],
+    "inheritance": "Autosomal Dominant",
+    "clinical_category": "Bone Fragility Disorder",
+    "protein_function": "Type I collagen formation",
+    "chromosome": "17q21.33",
+    "protein": "Collagen alpha-1(I) chain",
+    "pathway": "Bone matrix formation",
+    "variant_relevance": "Critical",
+    "known_pathogenicity": true,
+    "acmg_priority": "Critical",
+    "system_involvement": [
+      "bone",
+      "hearing",
+      "dental"
+    ],
+    "associated_phenotypes": [
+      "recurrent fractures",
+      "blue sclerae",
+      "bone fragility"
+    ]
+  },
+
+  "COL1A2": {
+    "full_name": "Collagen Type I Alpha 2 Chain",
+    "associated_conditions": [
+      "oi"
+    ],
+    "inheritance": "Autosomal Dominant",
+    "clinical_category": "Bone Fragility Disorder",
+    "protein_function": "Type I collagen assembly",
+    "chromosome": "7q21.3",
+    "protein": "Collagen alpha-2(I) chain",
+    "pathway": "Collagen biosynthesis",
+    "variant_relevance": "Critical",
+    "known_pathogenicity": true,
+    "acmg_priority": "Critical",
+    "system_involvement": [
+      "bone",
+      "connective tissue"
+    ],
+    "associated_phenotypes": [
+      "bone fragility",
+      "short stature"
+    ]
+  },
+
+  "COL2A1": {
+    "full_name": "Collagen Type II Alpha 1 Chain",
+    "associated_conditions": [
+      "stickler"
+    ],
+    "inheritance": "Autosomal Dominant",
+    "clinical_category": "Collagenopathy",
+    "protein_function": "Cartilage collagen formation",
+    "chromosome": "12q13.11",
+    "protein": "Collagen alpha-1(II) chain",
+    "pathway": "Cartilage development",
+    "variant_relevance": "High",
+    "known_pathogenicity": true,
+    "acmg_priority": "High",
+    "system_involvement": [
+      "ocular",
+      "hearing",
+      "skeletal"
+    ],
+    "associated_phenotypes": [
+      "myopia",
+      "retinal detachment",
+      "hearing loss"
+    ]
+  },
+
+  "COL11A1": {
+    "full_name": "Collagen Type XI Alpha 1 Chain",
+    "associated_conditions": [
+      "stickler"
+    ],
+    "inheritance": "Autosomal Dominant",
+    "clinical_category": "Collagenopathy",
+    "protein_function": "Cartilage matrix organization",
+    "chromosome": "1p21.1",
+    "protein": "Collagen alpha-1(XI) chain",
+    "pathway": "Cartilage formation",
+    "variant_relevance": "High",
+    "known_pathogenicity": true,
+    "acmg_priority": "High",
+    "system_involvement": [
+      "ocular",
+      "hearing",
+      "skeletal"
+    ],
+    "associated_phenotypes": [
+      "midface hypoplasia",
+      "myopia"
+    ]
+  },
+
+  "COL11A2": {
+    "full_name": "Collagen Type XI Alpha 2 Chain",
+    "associated_conditions": [
+      "stickler"
+    ],
+    "inheritance": "Autosomal Dominant",
+    "clinical_category": "Collagenopathy",
+    "protein_function": "Collagen fibril formation",
+    "chromosome": "6p21.32",
+    "protein": "Collagen alpha-2(XI) chain",
+    "pathway": "Extracellular matrix",
+    "variant_relevance": "Moderate",
+    "known_pathogenicity": true,
+    "acmg_priority": "Moderate",
+    "system_involvement": [
+      "hearing",
+      "skeletal"
+    ],
+    "associated_phenotypes": [
+      "hearing loss",
+      "joint hypermobility"
+    ]
+  },
+
+  "FLNA": {
+    "full_name": "Filamin A",
+    "associated_conditions": [
+      "periventricular nodular heterotopia",
+      "EDS-like"
+    ],
+    "inheritance": "X-linked Dominant",
+    "clinical_category": "Cytoskeletal Disorder",
+    "protein_function": "Actin cytoskeleton organization",
+    "chromosome": "Xq28",
+    "protein": "Filamin-A",
+    "pathway": "Cell structure signaling",
+    "variant_relevance": "High",
+    "known_pathogenicity": true,
+    "acmg_priority": "High",
+    "system_involvement": [
+      "neurological",
+      "vascular",
+      "connective tissue"
+    ],
+    "associated_phenotypes": [
+      "joint hypermobility",
+      "vascular anomalies"
+    ]
+  },
+
+  "AEBP1": {
+    "full_name": "AE Binding Protein 1",
+    "associated_conditions": [
+      "classical-like EDS type 2"
+    ],
+    "inheritance": "Autosomal Recessive",
+    "clinical_category": "Connective Tissue Disorder",
+    "protein_function": "Extracellular matrix regulation",
+    "chromosome": "7p13",
+    "protein": "AEBP1 protein",
+    "pathway": "Matrix remodeling",
+    "variant_relevance": "Moderate",
+    "known_pathogenicity": true,
+    "acmg_priority": "Moderate",
+    "system_involvement": [
+      "skin",
+      "joints"
+    ],
+    "associated_phenotypes": [
+      "skin hyperextensibility",
+      "joint instability"
+    ]
+  }
+}

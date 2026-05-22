@@ -1,0 +1,40 @@
+{
+  "joint hypermobility": {
+    "equivalent": [
+      "joint instability",
+      "joint laxity",
+      "hypermobility"
+    ],
+    "related": [
+      "soft tissue laxity"
+    ]
+  },
+  "vascular fragility": {
+    "equivalent": [
+      "arterial fragility",
+      "blood vessel fragility"
+    ],
+    "related": [
+      "arterial rupture",
+      "vascular rupture"
+    ]
+  },
+  "skin hyperextensibility": {
+    "equivalent": [
+      "skin fragility",
+      "fragile skin",
+      "soft skin"
+    ],
+    "related": [
+      "skin laxity"
+    ]
+  },
+  "easy bruising": {
+    "equivalent": [
+      "bruising tendency"
+    ],
+    "related": [
+      "bleeding tendency"
+    ]
+  }
+}

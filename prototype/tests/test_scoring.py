@@ -29,6 +29,22 @@ class ScoringTests(unittest.TestCase):
         score = calculate_score(patient, syndrome)
         self.assertEqual(score, 28)
 
+    def test_calculate_score_uses_semantic_matches(self):
+        syndrome = Syndrome(
+            id="cEDS",
+            name="Classical Ehlers-Danlos Syndrome",
+            phenotypes=[
+                SyndromePhenotype(name="joint hypermobility", weight=15),
+            ],
+        )
+
+        patient = Patient(
+            phenotypes=[Phenotype(name="joint instability")]
+        )
+
+        score = calculate_score(patient, syndrome)
+        self.assertEqual(score, 14)
+
 
 if __name__ == "__main__":
     unittest.main()

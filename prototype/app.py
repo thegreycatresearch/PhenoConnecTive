@@ -1,7 +1,26 @@
-from api import app
+from fastapi import FastAPI
+import json
+
+app = FastAPI(
+    title="PhenoConnecTive API"
+)
+
+@app.get("/")
+def root():
+
+    return {
+        "message": "PhenoConnecTive is running"
+    }
 
 
-if __name__ == "__main__":
-    import uvicorn
+@app.get("/syndromes")
+def get_syndromes():
 
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+    with open(
+        "data/syndromes.json",
+        "r"
+    ) as file:
+
+        syndromes = json.load(file)
+
+    return syndromes

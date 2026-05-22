@@ -1,6 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
+from routes.diagnosis import router as diagnosis_router
 from routes.phenotypes import router as phenotype_router
 from routes.variants import router as variant_router
 from utils.logging_config import configure_logging

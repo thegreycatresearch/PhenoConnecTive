@@ -1,12 +1,4 @@
-from dataclasses import dataclass
+from .variant import Variant
+from .phenotype import Phenotype
 
-@dataclass
-class Variant:
-    gene: str
-    variant: str
-    classification: str
-
-@dataclass
-class Phenotype:
-    name: str
-    hpo: str
+__all__ = ["Variant", "Phenotype"]

@@ -1,90 +1,62 @@
-"red_flags": [
-  "aneurysms",
-  "arterial rupture"
-]
-
-"cEDS": {
-
-  "name": "Classical Ehlers-Danlos Syndrome",
-
-  "genes": [
-    {
-      "name": "COL5A1",
-      "weight": 60
-    },
-
-    {
-      "name": "COL5A2",
-      "weight": 55
-    }
+{
+  "red_flags": [
+    "aneurysms",
+    "arterial rupture"
   ],
 
-  "inheritance": "Autosomal Dominant",
-
-  "phenotypes": [
-
-    {
-      "name": "skin hyperextensibility",
-      "weight": 20,
-      "cardinal": true
-    },
-
-    {
-      "name": "atrophic scarring",
-      "weight": 25,
-      "cardinal": true
-    },
-
-    {
-      "name": "joint hypermobility",
-      "weight": 15,
-      "cardinal": true
-    },
-
-    {
-      "name": "easy bruising",
-      "weight": 8,
-      "cardinal": false
-    },
-
-    {
-      "name": "soft skin",
-      "weight": 7,
-      "cardinal": false
-    },
-
-    {
-      "name": "chronic pain",
-      "weight": 5,
-      "cardinal": false
-    }
-  ]
-}
+  "cEDS": {
+    "name": "Classical Ehlers-Danlos Syndrome",
+    "genes": [
+      {
+        "name": "COL5A1",
+        "weight": 60
+      },
+      {
+        "name": "COL5A2",
+        "weight": 55
+      }
     ],
-
     "inheritance": "Autosomal Dominant",
-
     "phenotypes": [
-      "skin hyperextensibility",
-      "atrophic scarring",
-      "joint hypermobility",
-      "easy bruising",
-      "soft skin",
-      "skin fragility",
-      "chronic pain",
-      "joint instability"
+      {
+        "name": "skin hyperextensibility",
+        "weight": 20,
+        "cardinal": true
+      },
+      {
+        "name": "atrophic scarring",
+        "weight": 25,
+        "cardinal": true
+      },
+      {
+        "name": "joint hypermobility",
+        "weight": 15,
+        "cardinal": true
+      },
+      {
+        "name": "easy bruising",
+        "weight": 8,
+        "cardinal": false
+      },
+      {
+        "name": "soft skin",
+        "weight": 7,
+        "cardinal": false
+      },
+      {
+        "name": "chronic pain",
+        "weight": 5,
+        "cardinal": false
+      }
     ]
   },
 
   "vEDS": {
     "name": "Vascular Ehlers-Danlos Syndrome",
-
     "genes": [
       "COL3A1"
     ],
-
     "inheritance": "Autosomal Dominant",
-
     "phenotypes": [
       "aneurysms",
       "vascular fragility",
@@ -99,14 +71,11 @@
 
   "kEDS": {
     "name": "Kyphoscoliotic Ehlers-Danlos Syndrome",
-
     "genes": [
       "PLOD1",
       "FKBP14"
     ],
-
     "inheritance": "Autosomal Recessive",
-
     "phenotypes": [
       "kyphoscoliosis",
       "muscle hypotonia",
@@ -119,13 +88,10 @@
 
   "clEDS": {
     "name": "Classical-like Ehlers-Danlos Syndrome",
-
     "genes": [
       "TNXB"
     ],
-
     "inheritance": "Autosomal Recessive",
-
     "phenotypes": [
       "skin hyperextensibility",
       "joint hypermobility",

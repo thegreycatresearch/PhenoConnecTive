@@ -1,18 +1,48 @@
-import json
-from pathlib import Path
+from __future__ import annotations
 
-from scoring import calculate_score
-from phenotype_parser import normalize_patient_data
+import logging
+from typing import Dict, List, Tuple
 
-
-def load_syndromes():
-    syndromes_path = Path(__file__).resolve().parent / "syndromes.json"
-    with syndromes_path.open("r", encoding="utf-8") as file:
-        return json.load(file)
+from data.loader import load_syndromes
+from engine.phenotype_parser import normalize_patient_data
+from engine.scoring import calculate_score
+from utils.logging_config import configure_logging
 
 
-def main():
+def format_rankings(results: Dict[str, int]) -> List[Tuple[str, int, float]]:
+    if not results:
+        return []
+
+    max_score = max(results.values())
+    return [
+        (diagnosis, score, round((score / max_score) * 100, 1) if max_score else 0.0)
+        for diagnosis, score in sorted(results.items(), key=lambda item: item[1], reverse=True)
+    ]
+
+
+def display_rankings(rankings: List[Tuple[str, int, float]]) -> None:
+    print("\n=== Diagnostic Ranking ===\n")
+    for diagnosis, score, compatibility in rankings:
+        print(diagnosis)
+        print(f"Raw Score: {score}")
+        print(f"Compatibility: {compatibility}%")
+
+        if compatibility >= 80:
+            print("High diagnostic compatibility")
+        elif compatibility >= 50:
+            print("Moderate diagnostic compatibility")
+        else:
+            print("Low diagnostic compatibility")
+
+        print()
+
+
+def main() -> None:
+    configure_logging()
+    logger = logging.getLogger(__name__)
+
     syndromes = load_syndromes()
+    logger.info("Loaded %d syndromes", len(syndromes))
 
     patient_data = {
         "variants": [
@@ -36,40 +66,18 @@ def main():
         "inheritance": "Autosomal Dominant",
     }
 
-    patient_data = normalize_patient_data(patient_data)
-    results = {}
+    patient = normalize_patient_data(patient_data)
+    results: Dict[str, int] = {}
 
-    for syndrome_id, syndrome_data in syndromes.items():
-        if syndrome_id == "red_flags":
-            continue
-
-        score = calculate_score(patient_data, syndrome_data)
-        results[syndrome_data["name"]] = score
+    for syndrome in syndromes.values():
+        score = calculate_score(patient, syndrome)
+        results[syndrome.name] = score
 
     if not results:
         print("No syndromes loaded.")
         return
 
-    sorted_results = sorted(results.items(), key=lambda item: item[1], reverse=True)
-    max_score = max(results.values())
-
-    print("\n=== Diagnostic Ranking ===\n")
-
-    for diagnosis, score in sorted_results:
-        compatibility = round((score / max_score) * 100, 1) if max_score else 0.0
-
-        print(diagnosis)
-        print(f"Raw Score: {score}")
-        print(f"Compatibility: {compatibility}%")
-
-        if compatibility >= 80:
-            print("High diagnostic compatibility")
-        elif compatibility >= 50:
-            print("Moderate diagnostic compatibility")
-        else:
-            print("Low diagnostic compatibility")
-
-        print()
+    display_rankings(format_rankings(results))
 
 
 if __name__ == "__main__":

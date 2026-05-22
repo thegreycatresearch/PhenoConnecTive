@@ -2,29 +2,21 @@ from fastapi import FastAPI
 from pathlib import Path
 import json
 
-app = FastAPI(
-    title="PhenoConnecTive API",
-    description="Phenotype-driven connective tissue disorder analysis",
-    version="0.1.0"
-)
+app = FastAPI()
 
-# Base directory
 BASE_DIR = Path(__file__).resolve().parent
-
-# Data path
 DATA_DIR = BASE_DIR / "data"
 
 @app.get("/")
 def root():
 
     return {
-        "project": "PhenoConnecTive",
-        "status": "running"
+        "message": "PhenoConnecTive API running"
     }
 
 
 @app.get("/health")
-def health_check():
+def health():
 
     return {
         "status": "healthy"
@@ -32,16 +24,16 @@ def health_check():
 
 
 @app.get("/syndromes")
-def get_syndromes():
+def syndromes():
 
-    syndromes_file = DATA_DIR / "syndromes.json"
+    file_path = DATA_DIR / "syndromes.json"
 
     with open(
-        syndromes_file,
+        file_path,
         "r",
         encoding="utf-8"
     ) as file:
 
-        syndromes = json.load(file)
+        data = json.load(file)
 
-    return syndromes
+    return data

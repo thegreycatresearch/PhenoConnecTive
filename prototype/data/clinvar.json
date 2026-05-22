@@ -1,0 +1,34 @@
+[
+  {
+    "gene": "COL5A1",
+    "variant": "c.1502G>A",
+    "clinical_significance": "Pathogenic",
+    "review_status": "reviewed by expert panel",
+    "accession": "RCV000000001",
+    "summary": "Pathogenic variant associated with Classical Ehlers-Danlos Syndrome."
+  },
+  {
+    "gene": "TNXB",
+    "variant": "c.3001A>T",
+    "clinical_significance": "VUS",
+    "review_status": "criteria provided, conflicting interpretations",
+    "accession": "RCV000000002",
+    "summary": "Uncertain significance in TNXB."
+  },
+  {
+    "gene": "COL3A1",
+    "variant": "c.2401G>A",
+    "clinical_significance": "Likely Pathogenic",
+    "review_status": "criteria provided, single submitter",
+    "accession": "RCV000000003",
+    "summary": "Likely pathogenic variant associated with vascular Ehlers-Danlos Syndrome."
+  },
+  {
+    "gene": "PLOD1",
+    "variant": "c.512A>T",
+    "clinical_significance": "Benign",
+    "review_status": "reviewed by expert panel",
+    "accession": "RCV000000004",
+    "summary": "Benign variant observed in healthy controls."
+  }
+]

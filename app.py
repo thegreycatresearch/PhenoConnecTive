@@ -1,20 +1,38 @@
-import importlib.util
-import sys
-from pathlib import Path
+from fastapi import FastAPI
+import json
 
-ROOT_DIR = Path(__file__).resolve().parent
-PROTOTYPE_DIR = ROOT_DIR / "prototype"
-PROTOTYPE_APP = PROTOTYPE_DIR / "app.py"
+app = FastAPI(
+    title="PhenoConnecTive API",
+    description="Phenotype-driven connective tissue disorder analysis",
+    version="0.1.0"
+)
 
-if str(PROTOTYPE_DIR) not in sys.path:
-    sys.path.insert(0, str(PROTOTYPE_DIR))
+@app.get("/")
+def root():
 
-spec = importlib.util.spec_from_file_location("prototype_app", PROTOTYPE_APP)
-if spec is None or spec.loader is None:
-    raise ImportError(f"Could not load prototype app from {PROTOTYPE_APP}")
+    return {
+        "project": "PhenoConnecTive",
+        "status": "running",
+        "message": "API online"
+    }
 
-prototype_app = importlib.util.module_from_spec(spec)
-sys.modules["prototype_app"] = prototype_app
-spec.loader.exec_module(prototype_app)
 
-app = prototype_app.app
+@app.get("/syndromes")
+def get_syndromes():
+
+    with open(
+        "data/syndromes.json",
+        "r"
+    ) as file:
+
+        syndromes = json.load(file)
+
+    return syndromes
+
+
+@app.get("/health")
+def health_check():
+
+    return {
+        "status": "healthy"
+    }

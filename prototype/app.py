@@ -1,5 +1,6 @@
-```python
+```python id="7tzk4f"
 from fastapi import FastAPI, HTTPException, Query
+
 from fastapi.middleware.cors import CORSMiddleware
 
 from pathlib import Path

@@ -501,7 +501,27 @@ def search_phenotypes(
 @app.post(
     "/analyze_patient",
     response_model=FullAnalysisResponse,
-    tags=["Analysis"]
+    tags=["Analysis"],
+    summary="Analyze patient phenotypes",
+    description="""
+Advanced phenotype-driven syndrome prioritization endpoint.
+
+This endpoint:
+
+- validates HPO terms
+- analyzes phenotype overlap
+- ranks connective tissue disorders
+- calculates weighted scores
+- identifies likely syndromes
+- prioritizes candidate diagnoses
+
+Supports:
+- Ehlers-Danlos Syndromes
+- Marfan Syndrome
+- Loeys-Dietz Syndrome
+- connective tissue disorders
+- rare disease phenotype analysis
+"""
 )
 
 def analyze_patient(
@@ -509,13 +529,51 @@ def analyze_patient(
     request: PatientAnalysisRequest
 ):
 
+    # =================================================
+    # INITIALIZE MATCHER
+    # =================================================
+
     matcher = PhenotypeMatcher()
+
+    # =================================================
+    # RUN ANALYSIS
+    # =================================================
 
     analysis = matcher.match(
         request.phenotypes
     )
 
-    return {
+    # =================================================
+    # GET TOP RESULT
+    # =================================================
+
+    best_match = matcher.get_best_match()
+
+    # =================================================
+    # DETERMINE CONFIDENCE
+    # =================================================
+
+    confidence_level = "Low"
+
+    if best_match:
+
+        if best_match["score_percent"] >= 85:
+
+            confidence_level = "Very High"
+
+        elif best_match["score_percent"] >= 70:
+
+            confidence_level = "High"
+
+        elif best_match["score_percent"] >= 50:
+
+            confidence_level = "Moderate"
+
+    # =================================================
+    # BUILD RESPONSE
+    # =================================================
+
+    response = {
 
         "patient_id": request.patient_id,
 
@@ -530,20 +588,74 @@ def analyze_patient(
         ],
 
         "total_valid_phenotypes": len(
-            analysis["valid_phenotypes"]
+            analysis[
+                "valid_phenotypes"
+            ]
         ),
 
         "total_invalid_phenotypes": len(
-            analysis["invalid_phenotypes"]
+            analysis[
+                "invalid_phenotypes"
+            ]
         ),
 
         "analysis_version": "1.0.0",
 
         "generated_at": datetime.utcnow().isoformat(),
 
-        "results": analysis["results"]
+        "results": analysis[
+            "results"
+        ]
     }
 
+    # =================================================
+    # OPTIONAL CLINICAL SUMMARY
+    # =================================================
+
+    if best_match:
+
+        response["clinical_summary"] = {
+
+            "top_candidate": best_match[
+                "syndrome_name"
+            ],
+
+            "abbreviation": best_match[
+                "abbreviation"
+            ],
+
+            "confidence_level": confidence_level,
+
+            "score_percent": best_match[
+                "score_percent"
+            ],
+
+            "weighted_score": best_match[
+                "weighted_score"
+            ],
+
+            "matched_phenotypes": best_match[
+                "total_matches"
+            ],
+
+            "vascular_risk": best_match[
+                "vascular_risk"
+            ],
+
+            "clinical_severity": best_match[
+                "clinical_severity"
+            ],
+
+            "associated_genes": best_match[
+                "primary_genes"
+            ]
+        }
+
+    # =================================================
+    # RETURN
+    # =================================================
+
+    return response
 
 # =====================================================
 # BEST MATCH

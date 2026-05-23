@@ -792,4 +792,3 @@ def analysis_summary(
             "vascular_risk"
         ]
     }
-```

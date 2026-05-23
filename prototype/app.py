@@ -1,86 +1,108 @@
-from fastapi import FastAPI, HTTPException
+```python
+from fastapi import FastAPI, HTTPException, Query
+from fastapi.middleware.cors import CORSMiddleware
+
 from pathlib import Path
+
+from datetime import datetime
+
+from typing import Optional
+
 import json
+
+
+# =====================================================
+# IMPORT ENGINE
+# =====================================================
+
+from engine.matcher import PhenotypeMatcher
+
+
+# =====================================================
+# IMPORT MODELS
+# =====================================================
+
+from models.patient import (
+    PatientPhenotypeRequest,
+    PatientAnalysisRequest,
+    PatientAnalysisSummary
+)
+
+from models.analysis import (
+    FullAnalysisResponse,
+    BestMatchResponse
+)
+
+from models.phenotype import (
+    PhenotypeSearchResponse
+)
+
+from models.syndrome import (
+    SyndromeSearchResponse
+)
+
+
+# =====================================================
+# FASTAPI CONFIG
+# =====================================================
 
 app = FastAPI(
 
     title="PhenoConnecTive API",
 
     description="""
-# PhenoConnecTive
+AI-assisted bioinformatics platform for:
 
-Phenotype-driven bioinformatics platform focused on hereditary connective tissue disorders and rare diseases.
+- phenotype analysis
+- connective tissue disorders
+- rare disease prioritization
+- syndrome matching
+- genotype-phenotype interpretation
+- HPO ontology analysis
+- Ehlers-Danlos syndrome research
+- Marfan / Loeys-Dietz differential analysis
 
-## Main Goals
-
-- Phenotype-first analysis
-- Connective tissue disorder interpretation
-- Gene + phenotype integration
-- Explainable diagnostic support
-- Future AI-assisted prioritization
-
-## Current Supported Areas
-
-- Ehlers-Danlos Syndromes
-- Marfan Syndrome
-- Loeys-Dietz Syndrome
-- Osteogenesis Imperfecta
-- Stickler Syndrome
-
-## Planned Features
-
-- HPO semantic matching
-- Variant prioritization
-- ACMG support
-- ClinVar integration
-- VCF parsing
-- AI-assisted phenotype scoring
-
-## Important Disclaimer
-
-This project is experimental and research-oriented.
-It is NOT intended for clinical diagnosis or medical decision-making.
+Built for:
+- clinicians
+- researchers
+- bioinformatics projects
+- rare disease startups
+- AI-assisted diagnostics
 """,
 
-    version="0.2.0",
+    version="1.0.0",
 
     contact={
-        "name": "Kris Stazzone",
-        "url": "https://github.com/thegreycatresearch",
+
+        "name": "PhenoConnecTive Research",
+
+        "url": "https://github.com/thegreycatresearch/PhenoConnecTive"
     },
 
     license_info={
-        "name": "Research Use Only"
-    },
 
-    openapi_tags=[
-
-        {
-            "name": "System",
-            "description": "General API system endpoints."
-        },
-
-        {
-            "name": "Genes",
-            "description": "Gene database endpoints."
-        },
-
-        {
-            "name": "Syndromes",
-            "description": "Syndrome database endpoints."
-        },
-
-        {
-            "name": "Search",
-            "description": "Search endpoints for genes and syndromes."
-        },
-
-        {
-            "name": "Project",
-            "description": "Project metadata and information."
-        }
-    ]
+        "name": "MIT License"
+    }
 )
+
+
+# =====================================================
+# CORS
+# =====================================================
+
+app.add_middleware(
+
+    CORSMiddleware,
+
+    allow_origins=["*"],
+
+    allow_credentials=True,
+
+    allow_methods=["*"],
+
+    allow_headers=["*"],
+)
+
 
 # =====================================================
 # PATHS
@@ -90,40 +112,31 @@ BASE_DIR = Path(__file__).resolve().parent
 
 DATA_DIR = BASE_DIR / "data"
 
-SYNDROMES_FILE = DATA_DIR / "syndromes.json"
-
-GENES_FILE = DATA_DIR / "genes.json"
-
 
 # =====================================================
 # JSON LOADER
 # =====================================================
 
-def load_json(file_path):
+def load_json(filename):
 
-    try:
+    file_path = DATA_DIR / filename
 
-        with open(
-            file_path,
-            "r",
-            encoding="utf-8"
-        ) as file:
-
-            return json.load(file)
-
-    except FileNotFoundError:
+    if not file_path.exists():
 
         raise HTTPException(
+
             status_code=404,
-            detail=f"File not found: {file_path.name}"
+
+            detail=f"{filename} not found"
         )
 
-    except json.JSONDecodeError:
+    with open(
+        file_path,
+        "r",
+        encoding="utf-8"
+    ) as file:
 
-        raise HTTPException(
-            status_code=500,
-            detail=f"Invalid JSON format in {file_path.name}"
-        )
+        return json.load(file)
 
 
 # =====================================================
@@ -131,58 +144,87 @@ def load_json(file_path):
 # =====================================================
 
 @app.get(
-
     "/",
-
-    tags=["System"],
-
-    summary="API Root",
-
-    description="""
-Returns the API status and basic project information.
-""",
-
-    response_description="Basic API status information"
+    tags=["System"]
 )
+
 def root():
 
     return {
 
         "project": "PhenoConnecTive",
 
-        "status": "running",
+        "description": "AI-assisted phenotype-genotype analysis platform",
 
-        "version": "0.2.0",
+        "version": "1.0.0",
 
-        "description": "Phenotype-driven connective tissue disorder analysis platform"
+        "status": "online",
+
+        "documentation": "/docs",
+
+        "timestamp": datetime.utcnow().isoformat()
     }
 
 
 # =====================================================
-# HEALTH CHECK
+# HEALTH
 # =====================================================
 
 @app.get(
-
     "/health",
-
-    tags=["System"],
-
-    summary="Health Check",
-
-    description="""
-Checks whether the API is online and functioning properly.
-""",
-
-    response_description="Health status"
+    tags=["System"]
 )
+
 def health():
 
     return {
 
         "status": "healthy",
 
-        "api": "online"
+        "api": "PhenoConnecTive",
+
+        "engine": "Phenotype Scoring Engine",
+
+        "version": "1.0.0",
+
+        "timestamp": datetime.utcnow().isoformat()
+    }
+
+
+# =====================================================
+# API INFO
+# =====================================================
+
+@app.get(
+    "/info",
+    tags=["System"]
+)
+
+def api_info():
+
+    return {
+
+        "name": "PhenoConnecTive",
+
+        "version": "1.0.0",
+
+        "modules": [
+
+            "Phenotype Matching",
+            "Syndrome Prioritization",
+            "Gene Association",
+            "Rare Disease Analysis",
+            "Connective Tissue Disorders"
+        ],
+
+        "supported_disorders": [
+
+            "Ehlers-Danlos Syndrome",
+            "Marfan Syndrome",
+            "Loeys-Dietz Syndrome",
+            "Osteogenesis Imperfecta",
+            "Stickler Syndrome"
+        ]
     }
 
 
@@ -191,36 +233,15 @@ def health():
 # =====================================================
 
 @app.get(
-
     "/syndromes",
-
-    tags=["Syndromes"],
-
-    summary="Retrieve all syndromes",
-
-    description="""
-Returns all syndrome entries currently stored in the database.
-
-Includes:
-- syndrome names
-- inheritance
-- associated genes
-- phenotype data
-- weighted phenotype information
-""",
-
-    response_description="Complete syndrome database"
+    tags=["Syndromes"]
 )
+
 def get_syndromes():
 
-    data = load_json(SYNDROMES_FILE)
-
-    return {
-
-        "total_syndromes": len(data),
-
-        "syndromes": data
-    }
+    return load_json(
+        "syndromes.json"
+    )
 
 
 # =====================================================
@@ -228,39 +249,87 @@ def get_syndromes():
 # =====================================================
 
 @app.get(
-
-    "/syndromes/{syndrome_name}",
-
-    tags=["Syndromes"],
-
-    summary="Retrieve a specific syndrome",
-
-    description="""
-Returns detailed information for a single syndrome.
-
-Examples:
-- cEDS
-- vEDS
-- marfan
-- lds
-""",
-
-    response_description="Detailed syndrome information"
+    "/syndromes/{syndrome_key}",
+    tags=["Syndromes"]
 )
-def get_syndrome(syndrome_name: str):
 
-    syndromes = load_json(SYNDROMES_FILE)
+def get_single_syndrome(
+    syndrome_key: str
+):
 
-    syndrome_name = syndrome_name.lower()
+    syndromes = load_json(
+        "syndromes.json"
+    )
 
-    if syndrome_name not in syndromes:
+    syndrome = syndromes.get(
+        syndrome_key.lower()
+    )
+
+    if not syndrome:
 
         raise HTTPException(
+
             status_code=404,
-            detail=f"Syndrome '{syndrome_name}' not found"
+
+            detail="Syndrome not found"
         )
 
-    return syndromes[syndrome_name]
+    return syndrome
+
+
+# =====================================================
+# SEARCH SYNDROMES
+# =====================================================
+
+@app.get(
+    "/search/syndromes",
+    response_model=SyndromeSearchResponse,
+    tags=["Search"]
+)
+
+def search_syndromes(
+
+    query: str = Query(...)
+
+):
+
+    syndromes = load_json(
+        "syndromes.json"
+    )
+
+    results = []
+
+    for key, syndrome in syndromes.items():
+
+        name = syndrome.get(
+            "name",
+            ""
+        )
+
+        abbreviation = syndrome.get(
+            "abbreviation",
+            ""
+        )
+
+        if (
+
+            query.lower() in name.lower()
+
+            or
+
+            query.lower() in abbreviation.lower()
+        ):
+
+            results.append(
+                syndrome
+            )
+
+    return {
+
+        "total_results": len(results),
+
+        "results": results
+    }
 
 
 # =====================================================
@@ -268,37 +337,15 @@ def get_syndrome(syndrome_name: str):
 # =====================================================
 
 @app.get(
-
     "/genes",
-
-    tags=["Genes"],
-
-    summary="Retrieve all genes",
-
-    description="""
-Returns the complete gene database.
-
-Includes:
-- gene names
-- associated disorders
-- inheritance
-- pathways
-- protein functions
-- phenotype associations
-""",
-
-    response_description="Complete gene database"
+    tags=["Genes"]
 )
+
 def get_genes():
 
-    data = load_json(GENES_FILE)
-
-    return {
-
-        "total_genes": len(data),
-
-        "genes": data
-    }
+    return load_json(
+        "genes.json"
+    )
 
 
 # =====================================================
@@ -306,205 +353,331 @@ def get_genes():
 # =====================================================
 
 @app.get(
-
     "/genes/{gene_name}",
-
-    tags=["Genes"],
-
-    summary="Retrieve a specific gene",
-
-    description="""
-Returns detailed information about a single gene.
-
-Examples:
-- COL5A1
-- COL3A1
-- FBN1
-- TGFBR2
-""",
-
-    response_description="Detailed gene information"
+    tags=["Genes"]
 )
-def get_gene(gene_name: str):
 
-    genes = load_json(GENES_FILE)
+def get_single_gene(
+    gene_name: str
+):
 
-    gene_name = gene_name.upper()
+    genes = load_json(
+        "genes.json"
+    )
 
-    if gene_name not in genes:
+    gene = genes.get(
+        gene_name.upper()
+    )
+
+    if not gene:
 
         raise HTTPException(
+
             status_code=404,
-            detail=f"Gene '{gene_name}' not found"
+
+            detail="Gene not found"
         )
 
-    return genes[gene_name]
+    return gene
 
 
 # =====================================================
-# SEARCH GENE
+# GET ALL PHENOTYPES
 # =====================================================
 
 @app.get(
-
-    "/search/gene/{gene_name}",
-
-    tags=["Search"],
-
-    summary="Search genes",
-
-    description="""
-Searches for genes by partial name matching.
-
-Useful for:
-- autocomplete
-- exploratory analysis
-- quick gene lookup
-""",
-
-    response_description="Matching genes"
+    "/phenotypes",
+    tags=["Phenotypes"]
 )
-def search_gene(gene_name: str):
 
-    genes = load_json(GENES_FILE)
+def get_phenotypes():
 
-    gene_name = gene_name.upper()
+    return load_json(
+        "phenotypes.json"
+    )
 
-    matches = {}
 
-    for gene, info in genes.items():
+# =====================================================
+# GET SINGLE PHENOTYPE
+# =====================================================
 
-        if gene_name in gene:
+@app.get(
+    "/phenotypes/{hpo_id}",
+    tags=["Phenotypes"]
+)
 
-            matches[gene] = info
+def get_single_phenotype(
+    hpo_id: str
+):
+
+    phenotypes = load_json(
+        "phenotypes.json"
+    )
+
+    phenotype = phenotypes.get(
+        hpo_id
+    )
+
+    if not phenotype:
+
+        raise HTTPException(
+
+            status_code=404,
+
+            detail="Phenotype not found"
+        )
+
+    return phenotype
+
+
+# =====================================================
+# SEARCH PHENOTYPES
+# =====================================================
+
+@app.get(
+    "/search/phenotypes",
+    response_model=PhenotypeSearchResponse,
+    tags=["Search"]
+)
+
+def search_phenotypes(
+
+    query: str = Query(...)
+
+):
+
+    phenotypes = load_json(
+        "phenotypes.json"
+    )
+
+    results = []
+
+    for hpo_id, phenotype in phenotypes.items():
+
+        phenotype_name = phenotype.get(
+            "name",
+            ""
+        )
+
+        synonyms = phenotype.get(
+            "synonyms",
+            []
+        )
+
+        if query.lower() in phenotype_name.lower():
+
+            phenotype["hpo_id"] = hpo_id
+
+            results.append(
+                phenotype
+            )
+
+            continue
+
+        for synonym in synonyms:
+
+            if query.lower() in synonym.lower():
+
+                phenotype["hpo_id"] = hpo_id
+
+                results.append(
+                    phenotype
+                )
+
+                break
 
     return {
 
-        "query": gene_name,
+        "total_results": len(results),
 
-        "matches_found": len(matches),
-
-        "results": matches
+        "results": results
     }
 
 
 # =====================================================
-# SEARCH SYNDROME
+# ANALYZE PATIENT
 # =====================================================
 
-@app.get(
-
-    "/search/syndrome/{query}",
-
-    tags=["Search"],
-
-    summary="Search syndromes",
-
-    description="""
-Searches syndromes by:
-- abbreviation
-- syndrome key
-- syndrome full name
-""",
-
-    response_description="Matching syndromes"
+@app.post(
+    "/analyze_patient",
+    response_model=FullAnalysisResponse,
+    tags=["Analysis"]
 )
-def search_syndrome(query: str):
 
-    syndromes = load_json(SYNDROMES_FILE)
+def analyze_patient(
 
-    query = query.lower()
+    request: PatientAnalysisRequest
+):
 
-    matches = {}
+    matcher = PhenotypeMatcher()
 
-    for syndrome, info in syndromes.items():
-
-        syndrome_name = info.get("name", "").lower()
-
-        if query in syndrome.lower() or query in syndrome_name:
-
-            matches[syndrome] = info
+    analysis = matcher.match(
+        request.phenotypes
+    )
 
     return {
 
-        "query": query,
+        "patient_id": request.patient_id,
 
-        "matches_found": len(matches),
+        "input_phenotypes": request.phenotypes,
 
-        "results": matches
+        "valid_phenotypes": analysis[
+            "valid_phenotypes"
+        ],
+
+        "invalid_phenotypes": analysis[
+            "invalid_phenotypes"
+        ],
+
+        "total_valid_phenotypes": len(
+            analysis["valid_phenotypes"]
+        ),
+
+        "total_invalid_phenotypes": len(
+            analysis["invalid_phenotypes"]
+        ),
+
+        "analysis_version": "1.0.0",
+
+        "generated_at": datetime.utcnow().isoformat(),
+
+        "results": analysis["results"]
     }
 
 
 # =====================================================
-# PROJECT INFO
+# BEST MATCH
 # =====================================================
 
-@app.get(
-
-    "/info",
-
-    tags=["Project"],
-
-    summary="Project information",
-
-    description="""
-Returns general information about the PhenoConnecTive project.
-
-Includes:
-- focus areas
-- supported disorders
-- planned features
-- roadmap concepts
-""",
-
-    response_description="Project metadata"
+@app.post(
+    "/best_match",
+    response_model=BestMatchResponse,
+    tags=["Analysis"]
 )
-def info():
+
+def best_match(
+
+    request: PatientPhenotypeRequest
+):
+
+    matcher = PhenotypeMatcher()
+
+    matcher.match(
+        request.phenotypes
+    )
+
+    best = matcher.get_best_match()
+
+    if not best:
+
+        raise HTTPException(
+
+            status_code=404,
+
+            detail="No matches found"
+        )
+
+    confidence = "Low"
+
+    if best["score_percent"] >= 80:
+
+        confidence = "Very High"
+
+    elif best["score_percent"] >= 60:
+
+        confidence = "High"
+
+    elif best["score_percent"] >= 40:
+
+        confidence = "Moderate"
 
     return {
 
-        "project": "PhenoConnecTive",
-
-        "focus": [
-
-            "Bioinformatics",
-
-            "Rare Diseases",
-
-            "Connective Tissue Disorders",
-
-            "Phenotype Matching",
-
-            "Genetic Analysis"
+        "syndrome_name": best[
+            "syndrome_name"
         ],
 
-        "supported_disorders": [
-
-            "Ehlers-Danlos Syndromes",
-
-            "Marfan Syndrome",
-
-            "Loeys-Dietz Syndrome",
-
-            "Osteogenesis Imperfecta",
-
-            "Stickler Syndrome"
+        "abbreviation": best[
+            "abbreviation"
         ],
 
-        "planned_features": [
+        "score_percent": best[
+            "score_percent"
+        ],
 
-            "Variant scoring",
+        "weighted_score": best[
+            "weighted_score"
+        ],
 
-            "Phenotype matching",
+        "confidence_level": confidence,
 
-            "HPO integration",
+        "matched_phenotype_count": best[
+            "total_matches"
+        ],
 
-            "VCF parsing",
+        "vascular_risk": best[
+            "vascular_risk"
+        ],
 
-            "ClinVar integration",
-
-            "AI-assisted prioritization",
-
-            "Explainable diagnostics"
+        "primary_genes": best[
+            "primary_genes"
         ]
     }
+
+
+# =====================================================
+# ANALYSIS SUMMARY
+# =====================================================
+
+@app.post(
+    "/analysis_summary",
+    response_model=PatientAnalysisSummary,
+    tags=["Analysis"]
+)
+
+def analysis_summary(
+
+    request: PatientAnalysisRequest
+):
+
+    matcher = PhenotypeMatcher()
+
+    matcher.match(
+        request.phenotypes
+    )
+
+    best = matcher.get_best_match()
+
+    return {
+
+        "patient_id": request.patient_id,
+
+        "total_phenotypes": len(
+            request.phenotypes
+        ),
+
+        "total_candidate_syndromes": len(
+            matcher.analysis_result["results"]
+        ),
+
+        "best_match": best[
+            "syndrome_name"
+        ],
+
+        "best_match_score": best[
+            "score_percent"
+        ],
+
+        "weighted_score": best[
+            "weighted_score"
+        ],
+
+        "clinical_severity": best[
+            "clinical_severity"
+        ],
+
+        "vascular_risk": best[
+            "vascular_risk"
+        ]
+    }
+```

@@ -1,4 +1,3 @@
-```python id="kuyoqv"
 from pydantic import BaseModel, Field
 from typing import List, Optional
 
@@ -179,4 +178,3 @@ class PatientAnalysisSummary(BaseModel):
     clinical_severity: str
 
     vascular_risk: str
-```

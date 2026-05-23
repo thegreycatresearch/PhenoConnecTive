@@ -1,450 +1,389 @@
 {
-  "cEDS": {
-    "name": "Classical Ehlers-Danlos Syndrome",
-    "abbreviation": "cEDS",
-    "inheritance": "Autosomal Dominant",
-
-    "genes": [
-      {
-        "name": "COL5A1",
-        "weight": 20
-      },
-      {
-        "name": "COL5A2",
-        "weight": 20
-      }
-    ],
-
-    "phenotypes": [
-      {
-        "name": "skin hyperextensibility",
-        "hpo": "HP:0000974",
-        "weight": 10,
-        "cardinal": true
-      },
-      {
-        "name": "atrophic scarring",
-        "hpo": "HP:0001065",
-        "weight": 10,
-        "cardinal": true
-      },
-      {
-        "name": "joint hypermobility",
-        "hpo": "HP:0001382",
-        "weight": 8,
-        "cardinal": true
-      },
-      {
-        "name": "easy bruising",
-        "hpo": "HP:0000978",
-        "weight": 6,
-        "cardinal": false
-      },
-      {
-        "name": "soft skin",
-        "hpo": "HP:0011359",
-        "weight": 5,
-        "cardinal": false
-      },
-      {
-        "name": "molluscoid pseudotumors",
-        "hpo": "HP:0100699",
-        "weight": 4,
-        "cardinal": false
-      }
-    ]
-  },
-
-  "vEDS": {
-    "name": "Vascular Ehlers-Danlos Syndrome",
-    "abbreviation": "vEDS",
-    "inheritance": "Autosomal Dominant",
-
-    "genes": [
-      {
-        "name": "COL3A1",
-        "weight": 25
-      }
-    ],
-
-    "phenotypes": [
-      {
-        "name": "arterial rupture",
-        "hpo": "HP:0005294",
-        "weight": 15,
-        "cardinal": true
-      },
-      {
-        "name": "vascular fragility",
-        "hpo": "HP:0005295",
-        "weight": 12,
-        "cardinal": true
-      },
-      {
-        "name": "thin translucent skin",
-        "hpo": "HP:0000963",
-        "weight": 10,
-        "cardinal": true
-      },
-      {
-        "name": "easy bruising",
-        "hpo": "HP:0000978",
-        "weight": 8,
-        "cardinal": false
-      },
-      {
-        "name": "spontaneous organ rupture",
-        "hpo": "HP:0004299",
-        "weight": 12,
-        "cardinal": true
-      },
-      {
-        "name": "characteristic facial appearance",
-        "hpo": "HP:0001999",
-        "weight": 4,
-        "cardinal": false
-      }
-    ]
-  },
-
-  "hEDS": {
+  "heds": {
     "name": "Hypermobile Ehlers-Danlos Syndrome",
     "abbreviation": "hEDS",
-    "inheritance": "Unknown / Multifactorial",
-
-    "genes": [],
-
-    "phenotypes": [
-      {
-        "name": "generalized joint hypermobility",
-        "hpo": "HP:0001382",
-        "weight": 12,
-        "cardinal": true
-      },
-      {
-        "name": "chronic pain",
-        "hpo": "HP:0012531",
-        "weight": 8,
-        "cardinal": true
-      },
-      {
-        "name": "joint instability",
-        "hpo": "HP:0001388",
-        "weight": 10,
-        "cardinal": true
-      },
-      {
-        "name": "soft skin",
-        "hpo": "HP:0011359",
-        "weight": 4,
-        "cardinal": false
-      },
-      {
-        "name": "fatigue",
-        "hpo": "HP:0012378",
-        "weight": 5,
-        "cardinal": false
-      },
-      {
-        "name": "dysautonomia",
-        "hpo": "HP:0001286",
-        "weight": 7,
-        "cardinal": false
-      }
-    ]
-  },
-
-  "kEDS": {
-    "name": "Kyphoscoliotic Ehlers-Danlos Syndrome",
-    "abbreviation": "kEDS",
-    "inheritance": "Autosomal Recessive",
-
-    "genes": [
-      {
-        "name": "PLOD1",
-        "weight": 20
-      },
-      {
-        "name": "FKBP14",
-        "weight": 18
-      }
+    "category": "Hereditary Connective Tissue Disorder",
+    "inheritance": "Unknown / Likely Multifactorial",
+    "primary_genes": [],
+    "related_genes": [
+      "TNXB",
+      "FLNA"
     ],
-
-    "phenotypes": [
-      {
-        "name": "kyphoscoliosis",
-        "hpo": "HP:0002751",
-        "weight": 15,
-        "cardinal": true
-      },
-      {
-        "name": "hypotonia",
-        "hpo": "HP:0001252",
-        "weight": 10,
-        "cardinal": true
-      },
-      {
-        "name": "joint hypermobility",
-        "hpo": "HP:0001382",
-        "weight": 8,
-        "cardinal": true
-      },
-      {
-        "name": "fragile sclerae",
-        "hpo": "HP:0000591",
-        "weight": 6,
-        "cardinal": false
-      }
-    ]
+    "description": "Hypermobile Ehlers-Danlos syndrome is characterized by generalized joint hypermobility, chronic pain, instability, fatigue, dysautonomia, and soft connective tissue abnormalities.",
+    "major_features": [
+      "Generalized joint hypermobility",
+      "Joint instability",
+      "Chronic pain",
+      "Fatigue",
+      "Subluxations",
+      "Soft skin"
+    ],
+    "minor_features": [
+      "Dysautonomia",
+      "Orthostatic intolerance",
+      "Mitral valve prolapse",
+      "Gastrointestinal dysfunction",
+      "Chronic fatigue"
+    ],
+    "related_hpo_terms": [
+      "HP:0001382",
+      "HP:0001388",
+      "HP:0012531",
+      "HP:0012378",
+      "HP:0001279",
+      "HP:0001638",
+      "HP:0003202",
+      "HP:0002829"
+    ],
+    "diagnostic_weight": 10,
+    "body_systems": [
+      "musculoskeletal",
+      "autonomic",
+      "cardiovascular",
+      "gastrointestinal"
+    ],
+    "vascular_risk": "Low",
+    "clinical_severity": "Moderate to Severe",
+    "gene_confidence": "Low",
+    "phenotype_match_priority": "Very High",
+    "orphanet": "ORPHA:98249",
+    "omim": "130020"
   },
 
-  "clEDS": {
+  "ceds": {
+    "name": "Classical Ehlers-Danlos Syndrome",
+    "abbreviation": "cEDS",
+    "category": "Collagenopathy",
+    "inheritance": "Autosomal Dominant",
+    "primary_genes": [
+      "COL5A1",
+      "COL5A2"
+    ],
+    "related_genes": [
+      "COL1A1"
+    ],
+    "description": "Classical Ehlers-Danlos syndrome is characterized by skin hyperextensibility, atrophic scarring, generalized joint hypermobility, and tissue fragility.",
+    "major_features": [
+      "Skin hyperextensibility",
+      "Atrophic scarring",
+      "Joint hypermobility"
+    ],
+    "minor_features": [
+      "Easy bruising",
+      "Soft skin",
+      "Hernias",
+      "Joint instability"
+    ],
+    "related_hpo_terms": [
+      "HP:0000974",
+      "HP:0001065",
+      "HP:0001382",
+      "HP:0000978",
+      "HP:0011359"
+    ],
+    "diagnostic_weight": 10,
+    "body_systems": [
+      "skin",
+      "musculoskeletal"
+    ],
+    "vascular_risk": "Moderate",
+    "clinical_severity": "Moderate",
+    "gene_confidence": "Very High",
+    "phenotype_match_priority": "High",
+    "orphanet": "ORPHA:287",
+    "omim": "130000"
+  },
+
+  "veds": {
+    "name": "Vascular Ehlers-Danlos Syndrome",
+    "abbreviation": "vEDS",
+    "category": "Vascular Connective Tissue Disorder",
+    "inheritance": "Autosomal Dominant",
+    "primary_genes": [
+      "COL3A1"
+    ],
+    "related_genes": [],
+    "description": "Vascular Ehlers-Danlos syndrome is a severe connective tissue disorder associated with arterial rupture, organ fragility, translucent skin, and life-threatening vascular complications.",
+    "major_features": [
+      "Arterial rupture",
+      "Vascular fragility",
+      "Thin translucent skin",
+      "Organ rupture"
+    ],
+    "minor_features": [
+      "Easy bruising",
+      "Characteristic facial appearance",
+      "Pneumothorax"
+    ],
+    "related_hpo_terms": [
+      "HP:0005294",
+      "HP:0005295",
+      "HP:0000963",
+      "HP:0004299",
+      "HP:0000978"
+    ],
+    "diagnostic_weight": 15,
+    "body_systems": [
+      "vascular",
+      "skin",
+      "gastrointestinal"
+    ],
+    "vascular_risk": "Critical",
+    "clinical_severity": "Severe",
+    "gene_confidence": "Critical",
+    "phenotype_match_priority": "Critical",
+    "orphanet": "ORPHA:286",
+    "omim": "130050"
+  },
+
+  "cleds": {
     "name": "Classical-like Ehlers-Danlos Syndrome",
     "abbreviation": "clEDS",
+    "category": "Extracellular Matrix Disorder",
     "inheritance": "Autosomal Recessive",
-
-    "genes": [
-      {
-        "name": "TNXB",
-        "weight": 20
-      }
+    "primary_genes": [
+      "TNXB"
     ],
+    "related_genes": [],
+    "description": "Classical-like Ehlers-Danlos syndrome resembles classical EDS but lacks atrophic scarring.",
+    "major_features": [
+      "Skin hyperextensibility",
+      "Joint hypermobility",
+      "Soft skin"
+    ],
+    "minor_features": [
+      "Easy bruising",
+      "Joint instability"
+    ],
+    "related_hpo_terms": [
+      "HP:0000974",
+      "HP:0001382",
+      "HP:0011359",
+      "HP:0000978"
+    ],
+    "diagnostic_weight": 8,
+    "body_systems": [
+      "skin",
+      "musculoskeletal"
+    ],
+    "vascular_risk": "Low",
+    "clinical_severity": "Moderate",
+    "gene_confidence": "High",
+    "phenotype_match_priority": "High",
+    "orphanet": "ORPHA:230851",
+    "omim": "606408"
+  },
 
-    "phenotypes": [
-      {
-        "name": "skin hyperextensibility",
-        "hpo": "HP:0000974",
-        "weight": 10,
-        "cardinal": true
-      },
-      {
-        "name": "joint hypermobility",
-        "hpo": "HP:0001382",
-        "weight": 10,
-        "cardinal": true
-      },
-      {
-        "name": "easy bruising",
-        "hpo": "HP:0000978",
-        "weight": 7,
-        "cardinal": false
-      },
-      {
-        "name": "absence of atrophic scarring",
-        "hpo": "HP:0032443",
-        "weight": 5,
-        "cardinal": false
-      }
-    ]
+  "keds": {
+    "name": "Kyphoscoliotic Ehlers-Danlos Syndrome",
+    "abbreviation": "kEDS",
+    "category": "Collagen Modification Disorder",
+    "inheritance": "Autosomal Recessive",
+    "primary_genes": [
+      "PLOD1"
+    ],
+    "related_genes": [],
+    "description": "Kyphoscoliotic Ehlers-Danlos syndrome presents with congenital hypotonia, kyphoscoliosis, tissue fragility, and severe joint laxity.",
+    "major_features": [
+      "Kyphoscoliosis",
+      "Hypotonia",
+      "Joint hypermobility"
+    ],
+    "minor_features": [
+      "Fragile sclerae",
+      "Hearing loss",
+      "Easy bruising"
+    ],
+    "related_hpo_terms": [
+      "HP:0002751",
+      "HP:0001252",
+      "HP:0001382",
+      "HP:0000591",
+      "HP:0000365"
+    ],
+    "diagnostic_weight": 12,
+    "body_systems": [
+      "musculoskeletal",
+      "ocular",
+      "neuromuscular"
+    ],
+    "vascular_risk": "Moderate",
+    "clinical_severity": "Severe",
+    "gene_confidence": "Very High",
+    "phenotype_match_priority": "Very High",
+    "orphanet": "ORPHA:1564",
+    "omim": "225400"
   },
 
   "marfan": {
     "name": "Marfan Syndrome",
     "abbreviation": "MFS",
+    "category": "Aortopathy",
     "inheritance": "Autosomal Dominant",
-
-    "genes": [
-      {
-        "name": "FBN1",
-        "weight": 25
-      }
+    "primary_genes": [
+      "FBN1"
     ],
-
-    "phenotypes": [
-      {
-        "name": "aortic root dilatation",
-        "hpo": "HP:0002616",
-        "weight": 15,
-        "cardinal": true
-      },
-      {
-        "name": "arachnodactyly",
-        "hpo": "HP:0001166",
-        "weight": 10,
-        "cardinal": true
-      },
-      {
-        "name": "pectus excavatum",
-        "hpo": "HP:0000767",
-        "weight": 8,
-        "cardinal": false
-      },
-      {
-        "name": "scoliosis",
-        "hpo": "HP:0002650",
-        "weight": 6,
-        "cardinal": false
-      },
-      {
-        "name": "lens dislocation",
-        "hpo": "HP:0001083",
-        "weight": 14,
-        "cardinal": true
-      }
-    ]
+    "related_genes": [],
+    "description": "Marfan syndrome affects connective tissue and commonly involves the cardiovascular, skeletal, and ocular systems.",
+    "major_features": [
+      "Aortic root dilation",
+      "Arachnodactyly",
+      "Lens dislocation",
+      "Tall stature"
+    ],
+    "minor_features": [
+      "Scoliosis",
+      "Pectus excavatum",
+      "Mitral valve prolapse"
+    ],
+    "related_hpo_terms": [
+      "HP:0002616",
+      "HP:0001166",
+      "HP:0001083",
+      "HP:0001519",
+      "HP:0000767",
+      "HP:0002650"
+    ],
+    "diagnostic_weight": 15,
+    "body_systems": [
+      "cardiovascular",
+      "ocular",
+      "skeletal"
+    ],
+    "vascular_risk": "Critical",
+    "clinical_severity": "Severe",
+    "gene_confidence": "Critical",
+    "phenotype_match_priority": "Critical",
+    "orphanet": "ORPHA:558",
+    "omim": "154700"
   },
 
   "lds": {
     "name": "Loeys-Dietz Syndrome",
     "abbreviation": "LDS",
+    "category": "TGF-beta Signaling Disorder",
     "inheritance": "Autosomal Dominant",
-
-    "genes": [
-      {
-        "name": "TGFBR1",
-        "weight": 22
-      },
-      {
-        "name": "TGFBR2",
-        "weight": 22
-      },
-      {
-        "name": "SMAD2",
-        "weight": 18
-      },
-      {
-        "name": "SMAD3",
-        "weight": 18
-      },
-      {
-        "name": "TGFB2",
-        "weight": 18
-      },
-      {
-        "name": "TGFB3",
-        "weight": 18
-      }
+    "primary_genes": [
+      "TGFBR1",
+      "TGFBR2",
+      "SMAD3"
     ],
-
-    "phenotypes": [
-      {
-        "name": "arterial aneurysm",
-        "hpo": "HP:0004942",
-        "weight": 15,
-        "cardinal": true
-      },
-      {
-        "name": "hypertelorism",
-        "hpo": "HP:0000316",
-        "weight": 8,
-        "cardinal": false
-      },
-      {
-        "name": "bifid uvula",
-        "hpo": "HP:0000193",
-        "weight": 10,
-        "cardinal": true
-      },
-      {
-        "name": "joint hypermobility",
-        "hpo": "HP:0001382",
-        "weight": 6,
-        "cardinal": false
-      },
-      {
-        "name": "tortuosity of arteries",
-        "hpo": "HP:0004970",
-        "weight": 12,
-        "cardinal": true
-      }
-    ]
+    "related_genes": [],
+    "description": "Loeys-Dietz syndrome is characterized by aggressive vascular disease, aneurysms, craniofacial abnormalities, and connective tissue findings.",
+    "major_features": [
+      "Arterial aneurysm",
+      "Arterial tortuosity",
+      "Bifid uvula",
+      "Hypertelorism"
+    ],
+    "minor_features": [
+      "Scoliosis",
+      "Joint hypermobility",
+      "Skin translucency"
+    ],
+    "related_hpo_terms": [
+      "HP:0004942",
+      "HP:0004970",
+      "HP:0000193",
+      "HP:0000316",
+      "HP:0002650",
+      "HP:0001382"
+    ],
+    "diagnostic_weight": 15,
+    "body_systems": [
+      "vascular",
+      "skeletal",
+      "craniofacial"
+    ],
+    "vascular_risk": "Critical",
+    "clinical_severity": "Severe",
+    "gene_confidence": "Critical",
+    "phenotype_match_priority": "Critical",
+    "orphanet": "ORPHA:60030",
+    "omim": "609192"
   },
 
   "oi": {
     "name": "Osteogenesis Imperfecta",
     "abbreviation": "OI",
+    "category": "Bone Fragility Disorder",
     "inheritance": "Autosomal Dominant",
-
-    "genes": [
-      {
-        "name": "COL1A1",
-        "weight": 22
-      },
-      {
-        "name": "COL1A2",
-        "weight": 22
-      }
+    "primary_genes": [
+      "COL1A1",
+      "COL1A2"
     ],
-
-    "phenotypes": [
-      {
-        "name": "bone fragility",
-        "hpo": "HP:0002659",
-        "weight": 15,
-        "cardinal": true
-      },
-      {
-        "name": "recurrent fractures",
-        "hpo": "HP:0002757",
-        "weight": 15,
-        "cardinal": true
-      },
-      {
-        "name": "blue sclerae",
-        "hpo": "HP:0000592",
-        "weight": 10,
-        "cardinal": true
-      },
-      {
-        "name": "hearing loss",
-        "hpo": "HP:0000365",
-        "weight": 5,
-        "cardinal": false
-      }
-    ]
+    "related_genes": [],
+    "description": "Osteogenesis imperfecta is a collagen disorder characterized by bone fragility, recurrent fractures, blue sclerae, and connective tissue abnormalities.",
+    "major_features": [
+      "Bone fragility",
+      "Recurrent fractures",
+      "Blue sclerae"
+    ],
+    "minor_features": [
+      "Hearing loss",
+      "Short stature",
+      "Scoliosis"
+    ],
+    "related_hpo_terms": [
+      "HP:0002659",
+      "HP:0002757",
+      "HP:0000592",
+      "HP:0000365",
+      "HP:0002650"
+    ],
+    "diagnostic_weight": 14,
+    "body_systems": [
+      "skeletal",
+      "ocular",
+      "auditory"
+    ],
+    "vascular_risk": "Low",
+    "clinical_severity": "Moderate to Severe",
+    "gene_confidence": "Critical",
+    "phenotype_match_priority": "Very High",
+    "orphanet": "ORPHA:666",
+    "omim": "166200"
   },
 
   "stickler": {
     "name": "Stickler Syndrome",
     "abbreviation": "STL",
+    "category": "Collagenopathy",
     "inheritance": "Autosomal Dominant",
-
-    "genes": [
-      {
-        "name": "COL2A1",
-        "weight": 20
-      },
-      {
-        "name": "COL11A1",
-        "weight": 18
-      },
-      {
-        "name": "COL11A2",
-        "weight": 18
-      }
+    "primary_genes": [
+      "COL2A1"
     ],
-
-    "phenotypes": [
-      {
-        "name": "myopia",
-        "hpo": "HP:0000545",
-        "weight": 10,
-        "cardinal": true
-      },
-      {
-        "name": "retinal detachment",
-        "hpo": "HP:0000541",
-        "weight": 12,
-        "cardinal": true
-      },
-      {
-        "name": "hearing loss",
-        "hpo": "HP:0000365",
-        "weight": 6,
-        "cardinal": false
-      },
-      {
-        "name": "joint hypermobility",
-        "hpo": "HP:0001382",
-        "weight": 5,
-        "cardinal": false
-      },
-      {
-        "name": "midface hypoplasia",
-        "hpo": "HP:0000340",
-        "weight": 7,
-        "cardinal": false
-      }
-    ]
+    "related_genes": [],
+    "description": "Stickler syndrome is a connective tissue disorder affecting the eyes, hearing, joints, and craniofacial development.",
+    "major_features": [
+      "Myopia",
+      "Retinal detachment",
+      "Hearing loss"
+    ],
+    "minor_features": [
+      "Midface hypoplasia",
+      "Joint hypermobility",
+      "Early osteoarthritis"
+    ],
+    "related_hpo_terms": [
+      "HP:0000545",
+      "HP:0000541",
+      "HP:0000365",
+      "HP:0000340",
+      "HP:0001382"
+    ],
+    "diagnostic_weight": 11,
+    "body_systems": [
+      "ocular",
+      "auditory",
+      "skeletal",
+      "craniofacial"
+    ],
+    "vascular_risk": "Low",
+    "clinical_severity": "Moderate",
+    "gene_confidence": "Very High",
+    "phenotype_match_priority": "High",
+    "orphanet": "ORPHA:828",
+    "omim": "108300"
   }
 }

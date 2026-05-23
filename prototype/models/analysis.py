@@ -1,4 +1,3 @@
-```python id="t0u8mr"
 from pydantic import BaseModel, Field
 from typing import List, Optional
 
@@ -275,4 +274,3 @@ class AnalysisSummaryModel(BaseModel):
         description="Current engine version",
         example="1.0.0"
     )
-```

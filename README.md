@@ -1,73 +1,113 @@
 # PhenoConnecTive
 
-PhenoConnecTive is a bioinformatics clinical decision-support project focused on improving genotype-phenotype correlation in hereditary connective tissue disorders, particularly Ehlers-Danlos Syndromes (EDS).
+## Phenotype-Driven Bioinformatics Platform for Connective Tissue Disorders
 
-The project aims to integrate:
-- genetic variants,
-- phenotype data,
-- inheritance patterns,
-- and scientific evidence
+PhenoConnecTive is an open-source bioinformatics platform focused on phenotype-driven analysis of hereditary connective tissue disorders and related rare diseases.
 
-to assist diagnostic prioritization and clinical interpretation of genetic panels.
+The project aims to assist future clinical interpretation workflows by integrating:
 
----
-
-## Vision
-
-To develop a phenotype-guided bioinformatics platform capable of assisting clinicians and researchers in the interpretation of connective tissue disorder genetic data.
-
----
-
-## Core Concepts
-
-- Phenotype-driven analysis
-- Genotype-phenotype correlation
-- Rare disease bioinformatics
-- Clinical prioritization systems
-- Connective tissue disorders
-- Precision medicine
-
----
-
-## Planned Features
-
-- Structured phenotype input (HPO-compatible)
+- Phenotypic data (HPO terms)
+- Genetic panel results
+- Syndrome knowledge bases
 - Variant prioritization
-- Syndrome compatibility scoring
-- Gene-disease correlation
-- Clinical reporting support
-- Future AI-assisted interpretation
+- Explainable diagnostic scoring
+
+The long-term vision is to build a modern, explainable, phenotype-first diagnostic support system for disorders such as:
+
+- Ehlers-Danlos Syndromes (EDS)
+- Marfan Syndrome
+- Loeys-Dietz Syndrome
+- Osteogenesis Imperfecta
+- Stickler Syndrome
+- Other connective tissue and extracellular matrix disorders
 
 ---
 
-## Initial Scope
+# Current Features
 
-The MVP (Minimum Viable Product) will initially focus on:
-- Classical EDS
-- Vascular EDS
-- Classical-like EDS
-- Kyphoscoliotic EDS
-- Arthrochalasia EDS
+## API
 
----
+Built with FastAPI.
 
-## Databases & Resources
+Current endpoints include:
 
-- ClinVar
-- OMIM
-- HPO
-- Ensembl
-- gnomAD
-- PubMed
-
----
-
-## Project Status
-
-Early-stage conceptual and research phase.
+| Endpoint | Description |
+|---|---|
+| `/` | API status |
+| `/health` | Health check |
+| `/genes` | Retrieve gene database |
+| `/genes/{gene}` | Retrieve single gene |
+| `/syndromes` | Retrieve syndrome database |
+| `/syndromes/{syndrome}` | Retrieve single syndrome |
+| `/search/gene/{query}` | Search genes |
+| `/search/syndrome/{query}` | Search syndromes |
+| `/info` | Project information |
 
 ---
 
-## Founder
+# Core Technologies
 
-Independent early-stage bioinformatics founder focused on rare diseases and connective tissue disorder diagnostics.
+- Python
+- FastAPI
+- JSON-based biomedical datasets
+- HPO-oriented architecture
+- REST API infrastructure
+
+---
+
+# Project Goals
+
+## Phase 1 — Foundation
+- Syndrome knowledge base
+- Gene database
+- Phenotype ontology structure
+- API architecture
+- Open-source repository
+
+## Phase 2 — Phenotype Matching
+- HPO semantic matching
+- Phenotype similarity scoring
+- Syndrome ranking
+- Explainable results
+
+## Phase 3 — Variant Integration
+- Variant interpretation support
+- ACMG evidence integration
+- ClinVar compatibility
+- VCF parsing
+
+## Phase 4 — AI-Assisted Analysis
+- AI-assisted phenotype prioritization
+- Machine learning ranking systems
+- Predictive modeling
+- Clinical decision support
+
+---
+
+# Why This Matters
+
+Rare disease diagnostics are often delayed for years due to fragmented phenotype interpretation and limited integration between genomic data and clinical presentation.
+
+PhenoConnecTive aims to contribute toward more accessible, explainable, and phenotype-driven diagnostic workflows.
+
+This project is educational, experimental, and research-oriented.
+
+---
+
+# Repository Structure
+
+```txt
+PhenoConnecTive/
+│
+├── prototype/
+│   │
+│   ├── app.py
+│   ├── requirements.txt
+│   │
+│   ├── data/
+│   │   ├── syndromes.json
+│   │   ├── genes.json
+│   │   └── phenotypes.json
+│   │
+│   ├── engine/
+│   └── models/

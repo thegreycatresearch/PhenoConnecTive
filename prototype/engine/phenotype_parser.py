@@ -2,7 +2,10 @@ from __future__ import annotations
 
 from typing import Any, Dict, List
 
-from models.patient import Patient
+from models.patient import (
+    PatientPhenotypeRequest,
+    PatientAnalysisRequest
+)
 from models.phenotype import Phenotype
 from models.variant import Variant
 

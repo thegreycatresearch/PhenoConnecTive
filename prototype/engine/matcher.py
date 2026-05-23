@@ -1,4 +1,3 @@
-```python id="z0u8e8"
 from engine.scoring import analyze_patient
 
 
@@ -223,5 +222,3 @@ if __name__ == "__main__":
     print(
         matcher.get_top_matches()
     )
-```
-

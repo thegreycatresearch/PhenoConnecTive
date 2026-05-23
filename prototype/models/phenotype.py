@@ -1,4 +1,3 @@
-```python id="44jlwm"
 from pydantic import BaseModel, Field
 from typing import List, Optional
 
@@ -193,4 +192,3 @@ class PhenotypeSearchResponse(BaseModel):
     )
 
     results: List[PhenotypeModel]
-```

@@ -18,6 +18,7 @@ from pydantic import BaseModel
 
 from engine.matcher import PhenotypeMatcher
 
+from engine.phenotype_parser import PhenotypeParser
 
 # =====================================================
 # IMPORT MODELS
@@ -791,5 +792,72 @@ def analysis_summary(
 
         "vascular_risk": best[
             "vascular_risk"
+        ]
+    }
+
+# =====================================================
+# CLINICAL NOTE REQUEST MODEL
+# =====================================================
+
+class ClinicalNoteRequest(
+    BaseModel
+):
+
+    clinical_note: str
+
+
+# =====================================================
+# PARSE CLINICAL NOTE
+# =====================================================
+
+@app.post(
+    "/parse_clinical_note",
+    tags=["NLP"],
+    summary="Extract HPO phenotypes from clinical text",
+    description="""
+Clinical NLP endpoint.
+
+This endpoint:
+- parses clinical notes
+- detects phenotype keywords
+- maps HPO terms
+- extracts connective tissue findings
+- prepares phenotype-driven analysis
+
+Future versions:
+- AI embeddings
+- BioBERT
+- negation detection
+- multilingual support
+"""
+)
+
+def parse_clinical_note(
+
+    request: ClinicalNoteRequest
+):
+
+    parser = PhenotypeParser()
+
+    summary = parser.summarize_detection(
+        request.clinical_note
+    )
+
+    return {
+
+        "status": "success",
+
+        "input_text": request.clinical_note,
+
+        "total_detected_terms": summary[
+            "total_matches"
+        ],
+
+        "detected_hpo_terms": summary[
+            "matched_hpo_terms"
+        ],
+
+        "category_distribution": summary[
+            "category_distribution"
         ]
     }

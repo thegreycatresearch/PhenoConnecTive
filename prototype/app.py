@@ -1,4 +1,4 @@
-```python id="7tzk4f"
+python id="7tzk4f"
 from fastapi import FastAPI, HTTPException, Query
 
 from fastapi.middleware.cors import CORSMiddleware

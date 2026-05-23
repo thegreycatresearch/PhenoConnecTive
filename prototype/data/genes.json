@@ -1,453 +1,487 @@
+```json id="x0tx9u"
 {
   "COL5A1": {
+    "gene_symbol": "COL5A1",
     "full_name": "Collagen Type V Alpha 1 Chain",
-    "associated_conditions": [
-      "cEDS"
-    ],
-    "inheritance": "Autosomal Dominant",
-    "clinical_category": "Connective Tissue Disorder",
-    "protein_function": "Type V collagen fibril formation and extracellular matrix organization",
     "chromosome": "9q34.3",
+    "inheritance": "Autosomal Dominant",
     "protein": "Collagen alpha-1(V) chain",
-    "pathway": "Collagen biosynthesis",
-    "variant_relevance": "Very High",
-    "known_pathogenicity": true,
-    "acmg_priority": "High",
+    "protein_function": "Regulates collagen fibril assembly and connective tissue integrity",
+    "pathway": [
+      "Collagen biosynthesis",
+      "Extracellular matrix organization"
+    ],
+    "clinical_category": "Connective Tissue Disorder",
+    "associated_conditions": [
+      "Classical Ehlers-Danlos syndrome"
+    ],
+    "related_hpo_terms": [
+      "HP:0001382",
+      "HP:0000974",
+      "HP:0001065",
+      "HP:0000978"
+    ],
     "system_involvement": [
       "skin",
       "joints",
       "connective tissue"
     ],
-    "associated_phenotypes": [
-      "skin hyperextensibility",
-      "atrophic scarring",
-      "joint hypermobility"
-    ]
+    "variant_types": [
+      "missense",
+      "nonsense",
+      "splice-site",
+      "frameshift"
+    ],
+    "variant_relevance": "Critical",
+    "known_pathogenicity": true,
+    "acmg_priority": "Critical",
+    "gene_reviews_available": true,
+    "omim": "120215",
+    "orphanet": "ORPHA:287",
+    "clinvar_presence": true
   },
 
   "COL5A2": {
+    "gene_symbol": "COL5A2",
     "full_name": "Collagen Type V Alpha 2 Chain",
-    "associated_conditions": [
-      "cEDS"
-    ],
-    "inheritance": "Autosomal Dominant",
-    "clinical_category": "Connective Tissue Disorder",
-    "protein_function": "Type V collagen assembly",
     "chromosome": "2q32.2",
+    "inheritance": "Autosomal Dominant",
     "protein": "Collagen alpha-2(V) chain",
-    "pathway": "Collagen fibril organization",
-    "variant_relevance": "Very High",
-    "known_pathogenicity": true,
-    "acmg_priority": "High",
+    "protein_function": "Type V collagen fibril organization",
+    "pathway": [
+      "Extracellular matrix organization"
+    ],
+    "clinical_category": "Connective Tissue Disorder",
+    "associated_conditions": [
+      "Classical Ehlers-Danlos syndrome"
+    ],
+    "related_hpo_terms": [
+      "HP:0001382",
+      "HP:0000974"
+    ],
     "system_involvement": [
       "skin",
       "joints"
     ],
-    "associated_phenotypes": [
-      "joint hypermobility",
-      "skin fragility"
-    ]
+    "variant_types": [
+      "missense",
+      "splice-site"
+    ],
+    "variant_relevance": "Very High",
+    "known_pathogenicity": true,
+    "acmg_priority": "High",
+    "gene_reviews_available": true,
+    "omim": "120190",
+    "orphanet": "ORPHA:287",
+    "clinvar_presence": true
   },
 
   "COL3A1": {
+    "gene_symbol": "COL3A1",
     "full_name": "Collagen Type III Alpha 1 Chain",
-    "associated_conditions": [
-      "vEDS"
-    ],
-    "inheritance": "Autosomal Dominant",
-    "clinical_category": "Vascular Connective Tissue Disorder",
-    "protein_function": "Type III collagen synthesis in vessels and organs",
     "chromosome": "2q32.2",
+    "inheritance": "Autosomal Dominant",
     "protein": "Collagen alpha-1(III) chain",
-    "pathway": "Extracellular matrix stability",
+    "protein_function": "Provides structural support for vessels and hollow organs",
+    "pathway": [
+      "Collagen biosynthesis",
+      "Vascular connective tissue maintenance"
+    ],
+    "clinical_category": "Vascular Connective Tissue Disorder",
+    "associated_conditions": [
+      "Vascular Ehlers-Danlos syndrome"
+    ],
+    "related_hpo_terms": [
+      "HP:0005294",
+      "HP:0005295",
+      "HP:0000963",
+      "HP:0000978"
+    ],
+    "system_involvement": [
+      "vascular",
+      "skin",
+      "gastrointestinal"
+    ],
+    "variant_types": [
+      "glycine substitutions",
+      "splice-site",
+      "frameshift",
+      "nonsense"
+    ],
     "variant_relevance": "Critical",
     "known_pathogenicity": true,
     "acmg_priority": "Critical",
-    "system_involvement": [
-      "vascular",
-      "gastrointestinal",
-      "skin"
-    ],
-    "associated_phenotypes": [
-      "arterial rupture",
-      "vascular fragility",
-      "thin translucent skin"
-    ]
+    "gene_reviews_available": true,
+    "omim": "120180",
+    "orphanet": "ORPHA:286",
+    "clinvar_presence": true
   },
 
   "TNXB": {
+    "gene_symbol": "TNXB",
     "full_name": "Tenascin XB",
-    "associated_conditions": [
-      "clEDS",
-      "hEDS-like"
-    ],
-    "inheritance": "Autosomal Recessive",
-    "clinical_category": "Extracellular Matrix Disorder",
-    "protein_function": "Extracellular matrix maintenance and elasticity",
     "chromosome": "6p21.33",
+    "inheritance": "Autosomal Recessive",
     "protein": "Tenascin-X",
-    "pathway": "Matrix organization",
-    "variant_relevance": "High",
-    "known_pathogenicity": true,
-    "acmg_priority": "Moderate",
+    "protein_function": "Extracellular matrix stabilization",
+    "pathway": [
+      "Extracellular matrix organization"
+    ],
+    "clinical_category": "Extracellular Matrix Disorder",
+    "associated_conditions": [
+      "Classical-like Ehlers-Danlos syndrome"
+    ],
+    "related_hpo_terms": [
+      "HP:0001382",
+      "HP:0011359"
+    ],
     "system_involvement": [
       "skin",
       "musculoskeletal"
     ],
-    "associated_phenotypes": [
-      "joint hypermobility",
-      "soft skin"
-    ]
+    "variant_types": [
+      "deletions",
+      "missense",
+      "nonsense"
+    ],
+    "variant_relevance": "High",
+    "known_pathogenicity": true,
+    "acmg_priority": "Moderate",
+    "gene_reviews_available": false,
+    "omim": "600985",
+    "orphanet": "ORPHA:230851",
+    "clinvar_presence": true
   },
 
   "PLOD1": {
+    "gene_symbol": "PLOD1",
     "full_name": "Procollagen-Lysine 5-Dioxygenase 1",
-    "associated_conditions": [
-      "kEDS"
-    ],
-    "inheritance": "Autosomal Recessive",
-    "clinical_category": "Collagen Modification Disorder",
-    "protein_function": "Hydroxylation of collagen lysine residues",
     "chromosome": "1p36.22",
+    "inheritance": "Autosomal Recessive",
     "protein": "Lysyl hydroxylase 1",
-    "pathway": "Collagen cross-linking",
+    "protein_function": "Collagen cross-linking enzyme",
+    "pathway": [
+      "Collagen post-translational modification"
+    ],
+    "clinical_category": "Collagen Modification Disorder",
+    "associated_conditions": [
+      "Kyphoscoliotic Ehlers-Danlos syndrome"
+    ],
+    "related_hpo_terms": [
+      "HP:0002751",
+      "HP:0001252"
+    ],
+    "system_involvement": [
+      "spine",
+      "ocular",
+      "musculoskeletal"
+    ],
+    "variant_types": [
+      "duplications",
+      "splice-site",
+      "missense"
+    ],
     "variant_relevance": "Very High",
     "known_pathogenicity": true,
     "acmg_priority": "High",
-    "system_involvement": [
-      "spine",
-      "musculoskeletal",
-      "ocular"
-    ],
-    "associated_phenotypes": [
-      "kyphoscoliosis",
-      "hypotonia",
-      "joint hypermobility"
-    ]
-  },
-
-  "FKBP14": {
-    "full_name": "FKBP Prolyl Isomerase 14",
-    "associated_conditions": [
-      "kEDS"
-    ],
-    "inheritance": "Autosomal Recessive",
-    "clinical_category": "Protein Folding Disorder",
-    "protein_function": "Protein folding and collagen maturation",
-    "chromosome": "7p14.3",
-    "protein": "FKBP14 peptidyl-prolyl cis-trans isomerase",
-    "pathway": "Protein processing",
-    "variant_relevance": "Moderate",
-    "known_pathogenicity": true,
-    "acmg_priority": "Moderate",
-    "system_involvement": [
-      "musculoskeletal",
-      "hearing"
-    ],
-    "associated_phenotypes": [
-      "hearing loss",
-      "kyphoscoliosis"
-    ]
+    "gene_reviews_available": true,
+    "omim": "153454",
+    "orphanet": "ORPHA:1564",
+    "clinvar_presence": true
   },
 
   "FBN1": {
+    "gene_symbol": "FBN1",
     "full_name": "Fibrillin 1",
-    "associated_conditions": [
-      "marfan"
-    ],
-    "inheritance": "Autosomal Dominant",
-    "clinical_category": "Aortopathy",
-    "protein_function": "Microfibril formation and connective tissue elasticity",
     "chromosome": "15q21.1",
+    "inheritance": "Autosomal Dominant",
     "protein": "Fibrillin-1",
-    "pathway": "TGF-beta signaling",
+    "protein_function": "Microfibril formation and elastic fiber support",
+    "pathway": [
+      "TGF-beta signaling",
+      "Extracellular matrix organization"
+    ],
+    "clinical_category": "Aortopathy",
+    "associated_conditions": [
+      "Marfan syndrome"
+    ],
+    "related_hpo_terms": [
+      "HP:0002616",
+      "HP:0001166",
+      "HP:0001083",
+      "HP:0001519"
+    ],
+    "system_involvement": [
+      "cardiovascular",
+      "ocular",
+      "skeletal"
+    ],
+    "variant_types": [
+      "missense",
+      "dominant-negative variants",
+      "splice-site"
+    ],
     "variant_relevance": "Critical",
     "known_pathogenicity": true,
     "acmg_priority": "Critical",
-    "system_involvement": [
-      "cardiovascular",
-      "skeletal",
-      "ocular"
-    ],
-    "associated_phenotypes": [
-      "aortic root dilation",
-      "arachnodactyly",
-      "lens dislocation"
-    ]
+    "gene_reviews_available": true,
+    "omim": "134797",
+    "orphanet": "ORPHA:558",
+    "clinvar_presence": true
   },
 
   "TGFBR1": {
+    "gene_symbol": "TGFBR1",
     "full_name": "Transforming Growth Factor Beta Receptor 1",
-    "associated_conditions": [
-      "lds"
-    ],
-    "inheritance": "Autosomal Dominant",
-    "clinical_category": "TGF-beta Pathway Disorder",
-    "protein_function": "Cell signaling receptor",
     "chromosome": "9q22.33",
+    "inheritance": "Autosomal Dominant",
     "protein": "TGF-beta receptor type-1",
-    "pathway": "TGF-beta signaling",
-    "variant_relevance": "Critical",
-    "known_pathogenicity": true,
-    "acmg_priority": "Critical",
+    "protein_function": "Signal transduction receptor",
+    "pathway": [
+      "TGF-beta signaling"
+    ],
+    "clinical_category": "Aortopathy",
+    "associated_conditions": [
+      "Loeys-Dietz syndrome"
+    ],
+    "related_hpo_terms": [
+      "HP:0004942",
+      "HP:0000193",
+      "HP:0000316"
+    ],
     "system_involvement": [
       "vascular",
       "craniofacial",
       "skeletal"
     ],
-    "associated_phenotypes": [
-      "arterial aneurysm",
-      "hypertelorism",
-      "bifid uvula"
-    ]
+    "variant_types": [
+      "missense",
+      "loss-of-function"
+    ],
+    "variant_relevance": "Critical",
+    "known_pathogenicity": true,
+    "acmg_priority": "Critical",
+    "gene_reviews_available": true,
+    "omim": "190181",
+    "orphanet": "ORPHA:60030",
+    "clinvar_presence": true
   },
 
   "TGFBR2": {
+    "gene_symbol": "TGFBR2",
     "full_name": "Transforming Growth Factor Beta Receptor 2",
-    "associated_conditions": [
-      "lds"
-    ],
-    "inheritance": "Autosomal Dominant",
-    "clinical_category": "TGF-beta Pathway Disorder",
-    "protein_function": "Signal transduction receptor",
     "chromosome": "3p24.1",
+    "inheritance": "Autosomal Dominant",
     "protein": "TGF-beta receptor type-2",
-    "pathway": "TGF-beta signaling",
+    "protein_function": "Cell signaling receptor",
+    "pathway": [
+      "TGF-beta signaling"
+    ],
+    "clinical_category": "Aortopathy",
+    "associated_conditions": [
+      "Loeys-Dietz syndrome"
+    ],
+    "related_hpo_terms": [
+      "HP:0004942",
+      "HP:0004970"
+    ],
+    "system_involvement": [
+      "vascular",
+      "skeletal"
+    ],
+    "variant_types": [
+      "missense",
+      "splice-site"
+    ],
     "variant_relevance": "Critical",
     "known_pathogenicity": true,
     "acmg_priority": "Critical",
-    "system_involvement": [
-      "vascular",
-      "skeletal"
-    ],
-    "associated_phenotypes": [
-      "arterial tortuosity",
-      "aneurysm",
-      "joint hypermobility"
-    ]
-  },
-
-  "SMAD2": {
-    "full_name": "SMAD Family Member 2",
-    "associated_conditions": [
-      "lds"
-    ],
-    "inheritance": "Autosomal Dominant",
-    "clinical_category": "TGF-beta Signaling Disorder",
-    "protein_function": "Intracellular signal transduction",
-    "chromosome": "18q21.1",
-    "protein": "SMAD2",
-    "pathway": "TGF-beta signaling",
-    "variant_relevance": "High",
-    "known_pathogenicity": true,
-    "acmg_priority": "High",
-    "system_involvement": [
-      "vascular",
-      "skeletal"
-    ],
-    "associated_phenotypes": [
-      "aortic aneurysm",
-      "arachnodactyly"
-    ]
+    "gene_reviews_available": true,
+    "omim": "190182",
+    "orphanet": "ORPHA:60030",
+    "clinvar_presence": true
   },
 
   "SMAD3": {
+    "gene_symbol": "SMAD3",
     "full_name": "SMAD Family Member 3",
-    "associated_conditions": [
-      "lds",
-      "aneurysm-osteoarthritis syndrome"
-    ],
-    "inheritance": "Autosomal Dominant",
-    "clinical_category": "Aortopathy",
-    "protein_function": "Signal transduction mediator",
     "chromosome": "15q22.33",
+    "inheritance": "Autosomal Dominant",
     "protein": "SMAD3",
-    "pathway": "TGF-beta signaling",
+    "protein_function": "Intracellular TGF-beta signaling mediator",
+    "pathway": [
+      "TGF-beta signaling"
+    ],
+    "clinical_category": "Aneurysm Syndrome",
+    "associated_conditions": [
+      "Loeys-Dietz syndrome",
+      "Aneurysm-osteoarthritis syndrome"
+    ],
+    "related_hpo_terms": [
+      "HP:0004942",
+      "HP:0002650"
+    ],
+    "system_involvement": [
+      "vascular",
+      "skeletal",
+      "joints"
+    ],
+    "variant_types": [
+      "missense",
+      "nonsense"
+    ],
     "variant_relevance": "Very High",
     "known_pathogenicity": true,
     "acmg_priority": "Critical",
-    "system_involvement": [
-      "vascular",
-      "joints"
-    ],
-    "associated_phenotypes": [
-      "osteoarthritis",
-      "aortic aneurysm"
-    ]
+    "gene_reviews_available": true,
+    "omim": "603109",
+    "orphanet": "ORPHA:60030",
+    "clinvar_presence": true
   },
 
   "COL1A1": {
+    "gene_symbol": "COL1A1",
     "full_name": "Collagen Type I Alpha 1 Chain",
-    "associated_conditions": [
-      "oi"
-    ],
-    "inheritance": "Autosomal Dominant",
-    "clinical_category": "Bone Fragility Disorder",
-    "protein_function": "Type I collagen formation",
     "chromosome": "17q21.33",
+    "inheritance": "Autosomal Dominant",
     "protein": "Collagen alpha-1(I) chain",
-    "pathway": "Bone matrix formation",
+    "protein_function": "Structural collagen in bone and connective tissue",
+    "pathway": [
+      "Bone matrix formation"
+    ],
+    "clinical_category": "Bone Fragility Disorder",
+    "associated_conditions": [
+      "Osteogenesis Imperfecta"
+    ],
+    "related_hpo_terms": [
+      "HP:0002659",
+      "HP:0002757",
+      "HP:0000592"
+    ],
+    "system_involvement": [
+      "bone",
+      "ocular",
+      "hearing"
+    ],
+    "variant_types": [
+      "glycine substitutions",
+      "haploinsufficiency"
+    ],
     "variant_relevance": "Critical",
     "known_pathogenicity": true,
     "acmg_priority": "Critical",
-    "system_involvement": [
-      "bone",
-      "hearing",
-      "dental"
-    ],
-    "associated_phenotypes": [
-      "recurrent fractures",
-      "blue sclerae",
-      "bone fragility"
-    ]
+    "gene_reviews_available": true,
+    "omim": "120150",
+    "orphanet": "ORPHA:666",
+    "clinvar_presence": true
   },
 
   "COL1A2": {
+    "gene_symbol": "COL1A2",
     "full_name": "Collagen Type I Alpha 2 Chain",
-    "associated_conditions": [
-      "oi"
-    ],
-    "inheritance": "Autosomal Dominant",
-    "clinical_category": "Bone Fragility Disorder",
-    "protein_function": "Type I collagen assembly",
     "chromosome": "7q21.3",
+    "inheritance": "Autosomal Dominant",
     "protein": "Collagen alpha-2(I) chain",
-    "pathway": "Collagen biosynthesis",
-    "variant_relevance": "Critical",
-    "known_pathogenicity": true,
-    "acmg_priority": "Critical",
+    "protein_function": "Collagen fibril structure in connective tissue",
+    "pathway": [
+      "Collagen biosynthesis"
+    ],
+    "clinical_category": "Bone Fragility Disorder",
+    "associated_conditions": [
+      "Osteogenesis Imperfecta"
+    ],
+    "related_hpo_terms": [
+      "HP:0002659",
+      "HP:0002757"
+    ],
     "system_involvement": [
       "bone",
       "connective tissue"
     ],
-    "associated_phenotypes": [
-      "bone fragility",
-      "short stature"
-    ]
+    "variant_types": [
+      "missense",
+      "frameshift"
+    ],
+    "variant_relevance": "Critical",
+    "known_pathogenicity": true,
+    "acmg_priority": "Critical",
+    "gene_reviews_available": true,
+    "omim": "120160",
+    "orphanet": "ORPHA:666",
+    "clinvar_presence": true
   },
 
   "COL2A1": {
+    "gene_symbol": "COL2A1",
     "full_name": "Collagen Type II Alpha 1 Chain",
-    "associated_conditions": [
-      "stickler"
-    ],
-    "inheritance": "Autosomal Dominant",
-    "clinical_category": "Collagenopathy",
-    "protein_function": "Cartilage collagen formation",
     "chromosome": "12q13.11",
+    "inheritance": "Autosomal Dominant",
     "protein": "Collagen alpha-1(II) chain",
-    "pathway": "Cartilage development",
-    "variant_relevance": "High",
-    "known_pathogenicity": true,
-    "acmg_priority": "High",
+    "protein_function": "Cartilage collagen synthesis",
+    "pathway": [
+      "Cartilage development"
+    ],
+    "clinical_category": "Collagenopathy",
+    "associated_conditions": [
+      "Stickler syndrome"
+    ],
+    "related_hpo_terms": [
+      "HP:0000545",
+      "HP:0000541",
+      "HP:0000365"
+    ],
     "system_involvement": [
       "ocular",
-      "hearing",
-      "skeletal"
+      "skeletal",
+      "auditory"
     ],
-    "associated_phenotypes": [
-      "myopia",
-      "retinal detachment",
-      "hearing loss"
-    ]
-  },
-
-  "COL11A1": {
-    "full_name": "Collagen Type XI Alpha 1 Chain",
-    "associated_conditions": [
-      "stickler"
+    "variant_types": [
+      "missense",
+      "splice-site"
     ],
-    "inheritance": "Autosomal Dominant",
-    "clinical_category": "Collagenopathy",
-    "protein_function": "Cartilage matrix organization",
-    "chromosome": "1p21.1",
-    "protein": "Collagen alpha-1(XI) chain",
-    "pathway": "Cartilage formation",
-    "variant_relevance": "High",
+    "variant_relevance": "Very High",
     "known_pathogenicity": true,
     "acmg_priority": "High",
-    "system_involvement": [
-      "ocular",
-      "hearing",
-      "skeletal"
-    ],
-    "associated_phenotypes": [
-      "midface hypoplasia",
-      "myopia"
-    ]
-  },
-
-  "COL11A2": {
-    "full_name": "Collagen Type XI Alpha 2 Chain",
-    "associated_conditions": [
-      "stickler"
-    ],
-    "inheritance": "Autosomal Dominant",
-    "clinical_category": "Collagenopathy",
-    "protein_function": "Collagen fibril formation",
-    "chromosome": "6p21.32",
-    "protein": "Collagen alpha-2(XI) chain",
-    "pathway": "Extracellular matrix",
-    "variant_relevance": "Moderate",
-    "known_pathogenicity": true,
-    "acmg_priority": "Moderate",
-    "system_involvement": [
-      "hearing",
-      "skeletal"
-    ],
-    "associated_phenotypes": [
-      "hearing loss",
-      "joint hypermobility"
-    ]
+    "gene_reviews_available": true,
+    "omim": "120140",
+    "orphanet": "ORPHA:828"
   },
 
   "FLNA": {
+    "gene_symbol": "FLNA",
     "full_name": "Filamin A",
-    "associated_conditions": [
-      "periventricular nodular heterotopia",
-      "EDS-like"
-    ],
-    "inheritance": "X-linked Dominant",
-    "clinical_category": "Cytoskeletal Disorder",
-    "protein_function": "Actin cytoskeleton organization",
     "chromosome": "Xq28",
+    "inheritance": "X-linked Dominant",
     "protein": "Filamin-A",
-    "pathway": "Cell structure signaling",
-    "variant_relevance": "High",
-    "known_pathogenicity": true,
-    "acmg_priority": "High",
+    "protein_function": "Cytoskeleton organization and mechanosignaling",
+    "pathway": [
+      "Actin cytoskeleton regulation"
+    ],
+    "clinical_category": "Cytoskeletal Disorder",
+    "associated_conditions": [
+      "Periventricular nodular heterotopia",
+      "EDS-like syndrome"
+    ],
+    "related_hpo_terms": [
+      "HP:0001382",
+      "HP:0005295"
+    ],
     "system_involvement": [
       "neurological",
       "vascular",
       "connective tissue"
     ],
-    "associated_phenotypes": [
-      "joint hypermobility",
-      "vascular anomalies"
-    ]
-  },
-
-  "AEBP1": {
-    "full_name": "AE Binding Protein 1",
-    "associated_conditions": [
-      "classical-like EDS type 2"
+    "variant_types": [
+      "loss-of-function",
+      "missense"
     ],
-    "inheritance": "Autosomal Recessive",
-    "clinical_category": "Connective Tissue Disorder",
-    "protein_function": "Extracellular matrix regulation",
-    "chromosome": "7p13",
-    "protein": "AEBP1 protein",
-    "pathway": "Matrix remodeling",
-    "variant_relevance": "Moderate",
+    "variant_relevance": "High",
     "known_pathogenicity": true,
-    "acmg_priority": "Moderate",
-    "system_involvement": [
-      "skin",
-      "joints"
-    ],
-    "associated_phenotypes": [
-      "skin hyperextensibility",
-      "joint instability"
-    ]
+    "acmg_priority": "High",
+    "gene_reviews_available": true,
+    "omim": "300017",
+    "orphanet": "ORPHA:3008",
+    "clinvar_presence": true
   }
 }
+```

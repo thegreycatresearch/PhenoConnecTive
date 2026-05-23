@@ -10,6 +10,7 @@ from typing import Optional
 
 import json
 
+from pydantic import BaseModel
 
 # =====================================================
 # IMPORT ENGINE

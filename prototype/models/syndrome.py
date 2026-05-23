@@ -1,4 +1,3 @@
-```python id="g8e5lf"
 from pydantic import BaseModel, Field
 from typing import List, Optional
 
@@ -296,4 +295,3 @@ class SyndromeSearchResponse(BaseModel):
     )
 
     results: List[ExtendedSyndromeModel]
-```

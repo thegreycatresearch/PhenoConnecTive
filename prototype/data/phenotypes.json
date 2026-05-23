@@ -1,0 +1,526 @@
+```json id="d5eqi1"
+{
+  "HP:0001382": {
+    "name": "Joint hypermobility",
+    "category": "musculoskeletal",
+    "weight_default": 10,
+    "severity": "core",
+    "related_disorders": [
+      "hEDS",
+      "cEDS",
+      "clEDS",
+      "kEDS",
+      "LDS",
+      "Stickler syndrome"
+    ],
+    "synonyms": [
+      "generalized hypermobility",
+      "hypermobile joints"
+    ]
+  },
+
+  "HP:0001388": {
+    "name": "Joint instability",
+    "category": "musculoskeletal",
+    "weight_default": 10,
+    "severity": "core",
+    "related_disorders": [
+      "hEDS",
+      "cEDS"
+    ],
+    "synonyms": [
+      "recurrent subluxations",
+      "joint dislocations"
+    ]
+  },
+
+  "HP:0012531": {
+    "name": "Chronic pain",
+    "category": "neurological",
+    "weight_default": 8,
+    "severity": "supportive",
+    "related_disorders": [
+      "hEDS",
+      "cEDS"
+    ],
+    "synonyms": [
+      "persistent pain"
+    ]
+  },
+
+  "HP:0000974": {
+    "name": "Skin hyperextensibility",
+    "category": "dermatological",
+    "weight_default": 10,
+    "severity": "core",
+    "related_disorders": [
+      "cEDS",
+      "clEDS"
+    ],
+    "synonyms": [
+      "stretchy skin"
+    ]
+  },
+
+  "HP:0001065": {
+    "name": "Atrophic scarring",
+    "category": "dermatological",
+    "weight_default": 10,
+    "severity": "core",
+    "related_disorders": [
+      "cEDS"
+    ],
+    "synonyms": [
+      "papyraceous scars"
+    ]
+  },
+
+  "HP:0000978": {
+    "name": "Easy bruising",
+    "category": "hematological",
+    "weight_default": 6,
+    "severity": "supportive",
+    "related_disorders": [
+      "cEDS",
+      "vEDS",
+      "clEDS"
+    ],
+    "synonyms": [
+      "spontaneous bruising"
+    ]
+  },
+
+  "HP:0011359": {
+    "name": "Soft skin",
+    "category": "dermatological",
+    "weight_default": 5,
+    "severity": "supportive",
+    "related_disorders": [
+      "hEDS",
+      "cEDS"
+    ],
+    "synonyms": [
+      "velvety skin"
+    ]
+  },
+
+  "HP:0005294": {
+    "name": "Arterial rupture",
+    "category": "vascular",
+    "weight_default": 15,
+    "severity": "critical",
+    "related_disorders": [
+      "vEDS"
+    ],
+    "synonyms": [
+      "vascular rupture"
+    ]
+  },
+
+  "HP:0005295": {
+    "name": "Vascular fragility",
+    "category": "vascular",
+    "weight_default": 14,
+    "severity": "critical",
+    "related_disorders": [
+      "vEDS",
+      "LDS"
+    ],
+    "synonyms": [
+      "fragile blood vessels"
+    ]
+  },
+
+  "HP:0000963": {
+    "name": "Thin translucent skin",
+    "category": "dermatological",
+    "weight_default": 10,
+    "severity": "core",
+    "related_disorders": [
+      "vEDS"
+    ],
+    "synonyms": [
+      "transparent skin"
+    ]
+  },
+
+  "HP:0004299": {
+    "name": "Spontaneous organ rupture",
+    "category": "gastrointestinal",
+    "weight_default": 15,
+    "severity": "critical",
+    "related_disorders": [
+      "vEDS"
+    ],
+    "synonyms": [
+      "intestinal rupture"
+    ]
+  },
+
+  "HP:0002751": {
+    "name": "Kyphoscoliosis",
+    "category": "musculoskeletal",
+    "weight_default": 12,
+    "severity": "core",
+    "related_disorders": [
+      "kEDS"
+    ],
+    "synonyms": [
+      "spinal curvature"
+    ]
+  },
+
+  "HP:0001252": {
+    "name": "Hypotonia",
+    "category": "neuromuscular",
+    "weight_default": 8,
+    "severity": "core",
+    "related_disorders": [
+      "kEDS"
+    ],
+    "synonyms": [
+      "low muscle tone"
+    ]
+  },
+
+  "HP:0000591": {
+    "name": "Fragile sclerae",
+    "category": "ocular",
+    "weight_default": 7,
+    "severity": "supportive",
+    "related_disorders": [
+      "kEDS",
+      "OI"
+    ],
+    "synonyms": [
+      "thin sclera"
+    ]
+  },
+
+  "HP:0002616": {
+    "name": "Aortic root dilatation",
+    "category": "cardiovascular",
+    "weight_default": 15,
+    "severity": "critical",
+    "related_disorders": [
+      "Marfan syndrome",
+      "LDS"
+    ],
+    "synonyms": [
+      "aortic dilation"
+    ]
+  },
+
+  "HP:0001166": {
+    "name": "Arachnodactyly",
+    "category": "skeletal",
+    "weight_default": 10,
+    "severity": "core",
+    "related_disorders": [
+      "Marfan syndrome",
+      "LDS"
+    ],
+    "synonyms": [
+      "long fingers"
+    ]
+  },
+
+  "HP:0000767": {
+    "name": "Pectus excavatum",
+    "category": "skeletal",
+    "weight_default": 7,
+    "severity": "supportive",
+    "related_disorders": [
+      "Marfan syndrome"
+    ],
+    "synonyms": [
+      "sunken chest"
+    ]
+  },
+
+  "HP:0002650": {
+    "name": "Scoliosis",
+    "category": "skeletal",
+    "weight_default": 7,
+    "severity": "supportive",
+    "related_disorders": [
+      "Marfan syndrome",
+      "kEDS",
+      "OI"
+    ],
+    "synonyms": [
+      "spinal curvature"
+    ]
+  },
+
+  "HP:0001083": {
+    "name": "Lens dislocation",
+    "category": "ocular",
+    "weight_default": 14,
+    "severity": "critical",
+    "related_disorders": [
+      "Marfan syndrome"
+    ],
+    "synonyms": [
+      "ectopia lentis"
+    ]
+  },
+
+  "HP:0004942": {
+    "name": "Arterial aneurysm",
+    "category": "vascular",
+    "weight_default": 15,
+    "severity": "critical",
+    "related_disorders": [
+      "LDS",
+      "vEDS"
+    ],
+    "synonyms": [
+      "aneurysm"
+    ]
+  },
+
+  "HP:0000316": {
+    "name": "Hypertelorism",
+    "category": "craniofacial",
+    "weight_default": 6,
+    "severity": "supportive",
+    "related_disorders": [
+      "LDS"
+    ],
+    "synonyms": [
+      "widely spaced eyes"
+    ]
+  },
+
+  "HP:0000193": {
+    "name": "Bifid uvula",
+    "category": "craniofacial",
+    "weight_default": 8,
+    "severity": "core",
+    "related_disorders": [
+      "LDS"
+    ],
+    "synonyms": [
+      "split uvula"
+    ]
+  },
+
+  "HP:0004970": {
+    "name": "Arterial tortuosity",
+    "category": "vascular",
+    "weight_default": 12,
+    "severity": "core",
+    "related_disorders": [
+      "LDS",
+      "Arterial Tortuosity Syndrome"
+    ],
+    "synonyms": [
+      "tortuous arteries"
+    ]
+  },
+
+  "HP:0002659": {
+    "name": "Bone fragility",
+    "category": "skeletal",
+    "weight_default": 14,
+    "severity": "critical",
+    "related_disorders": [
+      "OI"
+    ],
+    "synonyms": [
+      "fragile bones"
+    ]
+  },
+
+  "HP:0002757": {
+    "name": "Recurrent fractures",
+    "category": "skeletal",
+    "weight_default": 14,
+    "severity": "critical",
+    "related_disorders": [
+      "OI"
+    ],
+    "synonyms": [
+      "multiple fractures"
+    ]
+  },
+
+  "HP:0000592": {
+    "name": "Blue sclerae",
+    "category": "ocular",
+    "weight_default": 10,
+    "severity": "core",
+    "related_disorders": [
+      "OI"
+    ],
+    "synonyms": [
+      "bluish sclera"
+    ]
+  },
+
+  "HP:0000365": {
+    "name": "Hearing loss",
+    "category": "auditory",
+    "weight_default": 6,
+    "severity": "supportive",
+    "related_disorders": [
+      "OI",
+      "Stickler syndrome",
+      "kEDS"
+    ],
+    "synonyms": [
+      "deafness"
+    ]
+  },
+
+  "HP:0000545": {
+    "name": "Myopia",
+    "category": "ocular",
+    "weight_default": 8,
+    "severity": "core",
+    "related_disorders": [
+      "Stickler syndrome",
+      "Marfan syndrome"
+    ],
+    "synonyms": [
+      "nearsightedness"
+    ]
+  },
+
+  "HP:0000541": {
+    "name": "Retinal detachment",
+    "category": "ocular",
+    "weight_default": 14,
+    "severity": "critical",
+    "related_disorders": [
+      "Stickler syndrome"
+    ],
+    "synonyms": [
+      "detached retina"
+    ]
+  },
+
+  "HP:0000340": {
+    "name": "Midface hypoplasia",
+    "category": "craniofacial",
+    "weight_default": 7,
+    "severity": "supportive",
+    "related_disorders": [
+      "Stickler syndrome"
+    ],
+    "synonyms": [
+      "flat midface"
+    ]
+  },
+
+  "HP:0012378": {
+    "name": "Fatigue",
+    "category": "systemic",
+    "weight_default": 5,
+    "severity": "supportive",
+    "related_disorders": [
+      "hEDS"
+    ],
+    "synonyms": [
+      "chronic fatigue"
+    ]
+  },
+
+  "HP:0001286": {
+    "name": "Dysautonomia",
+    "category": "neurological",
+    "weight_default": 8,
+    "severity": "supportive",
+    "related_disorders": [
+      "hEDS",
+      "POTS-associated disorders"
+    ],
+    "synonyms": [
+      "autonomic dysfunction"
+    ]
+  },
+
+  "HP:0001279": {
+    "name": "Orthostatic intolerance",
+    "category": "autonomic",
+    "weight_default": 7,
+    "severity": "supportive",
+    "related_disorders": [
+      "hEDS",
+      "POTS"
+    ],
+    "synonyms": [
+      "orthostatic symptoms"
+    ]
+  },
+
+  "HP:0002094": {
+    "name": "Dyspnea",
+    "category": "respiratory",
+    "weight_default": 6,
+    "severity": "supportive",
+    "related_disorders": [
+      "hEDS",
+      "Marfan syndrome"
+    ],
+    "synonyms": [
+      "shortness of breath"
+    ]
+  },
+
+  "HP:0001638": {
+    "name": "Mitral valve prolapse",
+    "category": "cardiovascular",
+    "weight_default": 7,
+    "severity": "supportive",
+    "related_disorders": [
+      "hEDS",
+      "Marfan syndrome"
+    ],
+    "synonyms": [
+      "MVP"
+    ]
+  },
+
+  "HP:0002829": {
+    "name": "Arthralgia",
+    "category": "musculoskeletal",
+    "weight_default": 7,
+    "severity": "supportive",
+    "related_disorders": [
+      "hEDS",
+      "cEDS"
+    ],
+    "synonyms": [
+      "joint pain"
+    ]
+  },
+
+  "HP:0003202": {
+    "name": "Subluxation",
+    "category": "musculoskeletal",
+    "weight_default": 10,
+    "severity": "core",
+    "related_disorders": [
+      "hEDS"
+    ],
+    "synonyms": [
+      "partial dislocation"
+    ]
+  },
+
+  "HP:0001519": {
+    "name": "Disproportionately tall stature",
+    "category": "skeletal",
+    "weight_default": 8,
+    "severity": "supportive",
+    "related_disorders": [
+      "Marfan syndrome"
+    ],
+    "synonyms": [
+      "tall stature"
+    ]
+  }
+}
+```

@@ -1,58 +1,271 @@
-from __future__ import annotations
-
-import logging
-from typing import Iterable
-
-from .phenotype_similarity import (
-    find_best_phenotype_match,
-    load_phenotype_relationships,
-)
-from models.patient import Patient
-from models.phenotype import Phenotype
-from models.syndrome import Syndrome, SyndromePhenotype
-
-logger = logging.getLogger(__name__)
-RELATIONSHIPS = load_phenotype_relationships()
+import json
+from pathlib import Path
 
 
-def calculate_score(patient: Patient, syndrome: Syndrome) -> int:
-    score = _score_phenotypes(patient.phenotypes, syndrome.phenotypes)
-    logger.debug("Calculated score %d for syndrome %s", score, syndrome.name)
-    return score
+# =====================================================
+# PATHS
+# =====================================================
+
+BASE_DIR = Path(__file__).resolve().parent.parent
+
+DATA_DIR = BASE_DIR / "data"
+
+SYNDROMES_FILE = DATA_DIR / "syndromes.json"
+
+PHENOTYPES_FILE = DATA_DIR / "phenotypes.json"
 
 
-def _score_phenotypes(patient_phenotypes: Iterable[Phenotype], syndrome_phenotypes: Iterable[SyndromePhenotype]) -> int:
-    score = 0
-    target_lookup = {
-        phenotype.name.lower(): phenotype
-        for phenotype in syndrome_phenotypes
-        if phenotype.name
-    }
-    target_names = [phenotype.name for phenotype in syndrome_phenotypes if phenotype.name]
+# =====================================================
+# LOADERS
+# =====================================================
+
+def load_json(file_path):
+
+    with open(
+        file_path,
+        "r",
+        encoding="utf-8"
+    ) as file:
+
+        return json.load(file)
+
+
+def load_syndromes():
+
+    return load_json(SYNDROMES_FILE)
+
+
+def load_phenotypes():
+
+    return load_json(PHENOTYPES_FILE)
+
+
+# =====================================================
+# PHENOTYPE VALIDATION
+# =====================================================
+
+def validate_phenotypes(patient_phenotypes):
+
+    phenotype_db = load_phenotypes()
+
+    valid = []
+
+    invalid = []
 
     for phenotype in patient_phenotypes:
-        if not phenotype.name:
-            continue
 
-        best_match = find_best_phenotype_match(phenotype.name, target_names, RELATIONSHIPS)
-        if best_match.similarity <= 0.0 or not best_match.target:
-            continue
+        if phenotype in phenotype_db:
 
-        target = target_lookup.get(best_match.target.lower())
-        if target is None:
-            continue
+            valid.append(phenotype)
 
-        weight = target.weight if target.weight is not None else 1
-        contribution = int(round(weight * best_match.similarity))
-        score += contribution
+        else:
 
-        logger.debug(
-            "Matched '%s' to '%s' (%s): weight=%s, contribution=%s",
-            phenotype.name,
-            best_match.target,
-            best_match.relation,
-            weight,
-            contribution,
+            invalid.append(phenotype)
+
+    return {
+
+        "valid": valid,
+
+        "invalid": invalid
+    }
+
+
+# =====================================================
+# WEIGHTED SCORE ENGINE
+# =====================================================
+
+def calculate_match_score(
+    patient_phenotypes,
+    syndrome_phenotypes,
+    phenotype_database
+):
+
+    patient_set = set(patient_phenotypes)
+
+    syndrome_set = set(syndrome_phenotypes)
+
+    matched = patient_set.intersection(syndrome_set)
+
+    if len(syndrome_set) == 0:
+
+        return {
+
+            "score": 0,
+            "matched": [],
+            "weighted_score": 0
+        }
+
+    raw_score = (
+        len(matched) / len(syndrome_set)
+    ) * 100
+
+    weighted_score = 0
+
+    matched_details = []
+
+    for phenotype in matched:
+
+        phenotype_info = phenotype_database.get(
+            phenotype,
+            {}
         )
 
-    return score
+        weight = phenotype_info.get(
+            "weight_default",
+            1
+        )
+
+        weighted_score += weight
+
+        matched_details.append({
+
+            "hpo_id": phenotype,
+
+            "name": phenotype_info.get(
+                "name",
+                "Unknown phenotype"
+            ),
+
+            "weight": weight,
+
+            "category": phenotype_info.get(
+                "category",
+                "unknown"
+            )
+        })
+
+    return {
+
+        "score": round(raw_score, 2),
+
+        "weighted_score": weighted_score,
+
+        "matched": matched_details
+    }
+
+
+# =====================================================
+# MAIN ANALYSIS ENGINE
+# =====================================================
+
+def analyze_patient(patient_phenotypes):
+
+    syndromes = load_syndromes()
+
+    phenotype_database = load_phenotypes()
+
+    validation = validate_phenotypes(
+        patient_phenotypes
+    )
+
+    valid_phenotypes = validation["valid"]
+
+    results = []
+
+    for syndrome_key, syndrome_data in syndromes.items():
+
+        syndrome_hpo = syndrome_data.get(
+            "related_hpo_terms",
+            []
+        )
+
+        match_result = calculate_match_score(
+
+            valid_phenotypes,
+
+            syndrome_hpo,
+
+            phenotype_database
+        )
+
+        results.append({
+
+            "syndrome_key": syndrome_key,
+
+            "syndrome_name": syndrome_data.get(
+                "name"
+            ),
+
+            "abbreviation": syndrome_data.get(
+                "abbreviation"
+            ),
+
+            "score_percent": match_result["score"],
+
+            "weighted_score": match_result[
+                "weighted_score"
+            ],
+
+            "matched_phenotypes": match_result[
+                "matched"
+            ],
+
+            "total_matches": len(
+                match_result["matched"]
+            ),
+
+            "inheritance": syndrome_data.get(
+                "inheritance"
+            ),
+
+            "primary_genes": syndrome_data.get(
+                "primary_genes",
+                []
+            ),
+
+            "clinical_severity": syndrome_data.get(
+                "clinical_severity"
+            ),
+
+            "vascular_risk": syndrome_data.get(
+                "vascular_risk"
+            )
+        })
+
+    results.sort(
+
+        key=lambda x: (
+            x["weighted_score"],
+            x["score_percent"]
+        ),
+
+        reverse=True
+    )
+
+    return {
+
+        "input_phenotypes": patient_phenotypes,
+
+        "valid_phenotypes": validation["valid"],
+
+        "invalid_phenotypes": validation["invalid"],
+
+        "results": results
+    }
+
+
+# =====================================================
+# TEST MODE
+# =====================================================
+
+if __name__ == "__main__":
+
+    sample_patient = [
+
+        "HP:0001382",
+        "HP:0000974",
+        "HP:0001065",
+        "HP:0000978"
+    ]
+
+    analysis = analyze_patient(
+        sample_patient
+    )
+
+    print(
+
+        json.dumps(
+            analysis,
+            indent=2
+        )
+    )

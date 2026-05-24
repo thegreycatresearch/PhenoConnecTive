@@ -22,22 +22,22 @@ from prototype.engine.phenotype_parser import PhenotypeParser
 # IMPORT MODELS
 # =====================================================
 
-from models.patient import (
+from prototype.models.patient import (
     PatientPhenotypeRequest,
     PatientAnalysisRequest,
     PatientAnalysisSummary
 )
 
-from models.analysis import (
+from prototype.models.analysis import (
     FullAnalysisResponse,
     BestMatchResponse
 )
 
-from models.phenotype import (
+from prototype.models.phenotype import (
     PhenotypeSearchResponse
 )
 
-from models.syndrome import (
+from prototype.models.syndrome import (
     SyndromeSearchResponse
 )
 

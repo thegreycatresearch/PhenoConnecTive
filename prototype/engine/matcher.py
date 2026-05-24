@@ -1,4 +1,4 @@
-from engine.scoring import analyze_patient
+from prototype.engine.scoring import analyze_patient
 
 
 # =====================================================

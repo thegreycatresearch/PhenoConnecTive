@@ -2,8 +2,8 @@ import logging
 from typing import Dict, List, Tuple
 
 from data.loader import load_syndromes
-from engine.phenotype_parser import normalize_patient_data
-from engine.scoring import calculate_score
+from prototype.engine.phenotype_parser import normalize_patient_data
+from prototype.engine.scoring import calculate_score
 from utils.logging_config import configure_logging
 
 

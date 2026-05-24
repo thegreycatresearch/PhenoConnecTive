@@ -11,8 +11,6 @@ from typing import Optional
 import json
 
 from pydantic import BaseModel
-
-from prototype.routes.nlp import router as nlp_router
 # =====================================================
 # IMPORT ENGINE
 # =====================================================
@@ -106,6 +104,14 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+# AQUÍ ES DONDE VA EL ROUTER
+from prototype.routes.nlp import router as nlp_router
+
+app.include_router(
+    nlp_router,
+    prefix="/nlp",
+    tags=["NLP"]
+)
 
 # =====================================================
 # PATHS

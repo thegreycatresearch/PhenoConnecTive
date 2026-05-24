@@ -105,12 +105,14 @@ app.add_middleware(
 
 # AQUÍ ES DONDE VA EL ROUTER
 from prototype.api.routes.nlp import router as nlp_router
+from prototype.api.routes.diagnosis import router as diagnosis_router
+from prototype.api.routes.phenotypes import router as phenotypes_router
+from prototype.api.routes.variants import router as variants_router
 
-app.include_router(
-    nlp_router,
-    prefix="/nlp",
-    tags=["NLP"]
-)
+app.include_router(nlp_router, prefix="/nlp", tags=["NLP"])
+app.include_router(diagnosis_router, prefix="/diagnosis", tags=["Diagnosis"])
+app.include_router(phenotypes_router, prefix="/phenotypes", tags=["Phenotypes"])
+app.include_router(variants_router, prefix="/variants", tags=["Variants"])
 
 # =====================================================
 # PATHS

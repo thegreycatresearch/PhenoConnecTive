@@ -2,8 +2,8 @@ from __future__ import annotations
 
 from typing import Iterable
 
-from models.variant import Variant
-from models.syndrome import Syndrome
+from prototype.models.variant import Variant
+from prototype.models.syndrome import Syndrome
 
 
 def score_variants(patient_variants: Iterable[Variant], syndrome: Syndrome) -> int:

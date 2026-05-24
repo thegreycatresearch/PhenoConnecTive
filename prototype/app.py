@@ -104,7 +104,7 @@ app.add_middleware(
 )
 
 # AQUÍ ES DONDE VA EL ROUTER
-from prototype.routes.nlp import router as nlp_router
+from prototype.api.routes.nlp import router as nlp_router
 
 app.include_router(
     nlp_router,

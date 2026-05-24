@@ -3,6 +3,7 @@ from pydantic import BaseModel
 
 router = APIRouter()
 
+
 class ClinicalNoteRequest(BaseModel):
     clinical_note: str
 

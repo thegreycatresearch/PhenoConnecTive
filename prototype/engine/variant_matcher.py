@@ -4,9 +4,9 @@ import logging
 from typing import List
 
 from data.variant_database import VariantDatabase
-from models.clinvar import ClinVarRecord, VariantMatchResult
-from models.patient import Patient
-from models.variant import Variant
+from prototype.models.clinvar import ClinVarRecord, VariantMatchResult
+from prototype.models.patient import Patient
+from prototype.models.variant import Variant
 
 logger = logging.getLogger(__name__)
 

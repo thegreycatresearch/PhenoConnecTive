@@ -12,6 +12,7 @@ import json
 
 from pydantic import BaseModel
 
+from prototype.routes.nlp import router as nlp_router
 # =====================================================
 # IMPORT ENGINE
 # =====================================================

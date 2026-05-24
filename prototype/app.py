@@ -15,9 +15,8 @@ from pydantic import BaseModel
 # IMPORT ENGINE
 # =====================================================
 
-from engine.matcher import PhenotypeMatcher
-
-from engine.phenotype_parser import PhenotypeParser
+from prototype.engine.matcher import PhenotypeMatcher
+from prototype.engine.phenotype_parser import PhenotypeParser
 
 # =====================================================
 # IMPORT MODELS
